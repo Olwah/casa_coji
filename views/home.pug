@@ -1,0 +1,46 @@
+extends base
+
+block content
+    .home
+        nav.nav
+            .nav__menu-lang ES | IN
+            .nav__btn
+                svg.nav__icon
+                    use(xlink:href='img/sprite.svg#icon-mountain')
+        .home__overview
+            .home__overview-title Casa Coji
+            #hero-slider.splide
+                .splide__track
+                    .splide__list
+                        .splide__slide
+                            img(src='/img/coji_placeholder_1.jpeg')
+                        .splide__slide
+                            img(src='/img/casa_coji_main.jpeg')
+                        .splide__slide
+                            img(src='/img/casa_coji_main_2.jpeg')
+                        .splide__slide
+                            img(src='/img/casa_coji_main_3.jpeg')
+                        .splide__slide
+                            img(src='/img/casa_coji_view_1.jpeg')
+                        .splide__slide
+                            img(src='/img/casa_coji_kitchen_night.jpeg')
+        .divider__mountain
+        section.home__section.home__rooms
+            .home__section-title Rooms
+            button#rooms-info.btn.home__section-btn View Rooms 
+        .divider__mountain    
+        section.home__section.home__food 
+            .home__section-title Food
+            button#food-info.btn.home__section-btn View Food
+        section.home__section.home__camping 
+            .home__section-title Camping
+            button#camping-info.btn.home__section-btn View Camping
+        section.home__section.home__activities 
+            .home__section-title Activities
+            button#activities-info.btn.home__section-btn View Activities
+        section.home__section.home__courses 
+            .home__section-title Courses
+            button#courses-info.btn.home__section-btn View Courses
+        section.home__section.home__equipment 
+            .home__section-title Equipment
+            button#equipment-info.btn.home__section-btn View Equipment

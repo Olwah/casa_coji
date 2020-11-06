@@ -1,0 +1,20 @@
+doctype html
+html
+    head
+        block head
+            meta(charset='UTF-8')
+            meta(name='viewport' content='width=device-width, initial-scale=1.0')
+            link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css")
+            link(rel='stylesheet' type='text/css' href='/css/style.css')
+            link(rel='shortcut icon' type='image/png' href='/img/favicon.png')
+            link(href="https://fonts.googleapis.com/css2?family=Mrs+Sheppards&family=Thasadith:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet")
+
+            title Casa Coji | #{title}
+
+    body
+        //- CONTENT
+        block content
+
+        //- FOOTER
+        include _footer
+        script(src="/js/bundle.js")

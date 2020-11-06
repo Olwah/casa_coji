@@ -1,0 +1,16 @@
+.btn {
+    font-family: $font-buttons;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 1rem 1.5rem;
+    background-color: $color-black;
+    color: $color-white;
+    border-radius: 2rem;
+    border: 1px solid $color-white;
+    //box-shadow: 2px 2px .2px $color-black;
+
+    &:focus {
+        outline: none;
+    }
+}
