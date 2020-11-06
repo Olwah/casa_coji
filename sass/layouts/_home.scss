@@ -1,4 +1,6 @@
 .home {
+    background-color: $color-black;
+
     &__overview {
         position: relative;
         width: 100%;
@@ -10,7 +12,38 @@
             letter-spacing: .1rem;
             color: $color-white;
             @include absCenter;
+            animation: flicker-in 3s linear both;
             z-index: 10;
+        }
+
+        &-pagination {
+            bottom: 3.5em;
+        }
+
+        &-page {
+            background-color: $color-white;
+
+            &.is-active {
+                background-color: $color-black;
+            }
+        }
+    }
+
+    &__about {
+        font-family: $font-buttons;
+        color: $color-white;
+        padding: 1.5rem 1rem 2rem 1rem;
+
+        &-title {
+            font-size: 2rem;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        &-info {
+            font-size: 1.5rem;
+            font-weight: 300;
+            text-align: justify;
         }
     }
 
@@ -60,6 +93,10 @@
     &__equipment {
         background: linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.3)), url('/img/equipment_placeholder.jpg') no-repeat;
         background-size: cover;
+    }
+
+    &__merge {
+        height: 2rem;
     }
 
     /* Add this to media query for desktop view at a later date 

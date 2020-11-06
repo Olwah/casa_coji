@@ -1,0 +1,31 @@
+.footer {
+    background-color: $color-black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem .5rem;
+    margin-top: -1rem;
+
+    &__logo {
+        width: 4rem;
+        height: 4rem;
+        padding-left: .5rem;
+
+        & img {
+            @include imgMax
+        }
+
+        & svg {
+            width: inherit;
+            height: inherit;
+            fill: $color-white;
+        }
+    }
+
+    &__contact {
+        display: flex;
+        flex-direction: column;
+        justify-content: center; 
+        color: $color-white;  
+    }
+}

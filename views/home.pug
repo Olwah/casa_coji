@@ -7,7 +7,7 @@ block content
             .nav__btn
                 svg.nav__icon
                     use(xlink:href='img/sprite.svg#icon-mountain')
-        .home__overview
+        .home__overview.divider__mountain--bottom
             .home__overview-title Casa Coji
             #hero-slider.splide
                 .splide__track
@@ -24,23 +24,26 @@ block content
                             img(src='/img/casa_coji_view_1.jpeg')
                         .splide__slide
                             img(src='/img/casa_coji_kitchen_night.jpeg')
-        .divider__mountain
-        section.home__section.home__rooms
-            .home__section-title Rooms
-            button#rooms-info.btn.home__section-btn View Rooms 
-        .divider__mountain    
-        section.home__section.home__food 
-            .home__section-title Food
-            button#food-info.btn.home__section-btn View Food
-        section.home__section.home__camping 
-            .home__section-title Camping
-            button#camping-info.btn.home__section-btn View Camping
-        section.home__section.home__activities 
-            .home__section-title Activities
-            button#activities-info.btn.home__section-btn View Activities
-        section.home__section.home__courses 
-            .home__section-title Courses
-            button#courses-info.btn.home__section-btn View Courses
-        section.home__section.home__equipment 
-            .home__section-title Equipment
-            button#equipment-info.btn.home__section-btn View Equipment
+        .home__about.divider__mountain
+            h2.home__about-title Welcome!
+            h3.home__about-info Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate amet nobis esse modi. Nihil sint praesentium ipsum consequatur id, similique consequuntur minima! Mollitia, aut? Velit ab aspernatur suscipit quidem qui? 
+        main
+            .home__section.home__rooms.divider__mountain
+                .home__section-title Rooms
+                button#rooms-info.btn.home__section-btn View Rooms   
+            .home__section.home__food.divider__mountain 
+                .home__section-title Food
+                button#food-info.btn.home__section-btn View Food
+            .home__section.home__camping.divider__mountain 
+                .home__section-title Camping
+                button#camping-info.btn.home__section-btn View Camping
+            .home__section.home__activities.divider__mountain 
+                .home__section-title Activities
+                button#activities-info.btn.home__section-btn View Activities
+            .home__section.home__courses.divider__mountain 
+                .home__section-title Courses
+                button#courses-info.btn.home__section-btn View Courses
+            .home__section.home__equipment.divider__mountain 
+                .home__section-title Equipment
+                button#equipment-info.btn.home__section-btn View Equipment
+        .home__merge

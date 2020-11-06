@@ -8,12 +8,14 @@ html
             link(rel='stylesheet' type='text/css' href='/css/style.css')
             link(rel='shortcut icon' type='image/png' href='/img/favicon.png')
             link(href="https://fonts.googleapis.com/css2?family=Mrs+Sheppards&family=Thasadith:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet")
-
             title Casa Coji | #{title}
 
     body
         //- CONTENT
         block content
+
+        //- WHATSAPP
+        include _whatsApp
 
         //- FOOTER
         include _footer
