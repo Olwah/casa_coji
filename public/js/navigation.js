@@ -8,9 +8,9 @@ export const toggleNav = () => {
 }
 
 const openNav = () => {
-    [navOpen, navClosed].forEach(el => el.classList.toggle('nav__hide'));
     navOpen.classList.toggle('is-open');
     navBtn.forEach(el => el.classList.toggle('is-open'));
+    [navOpen, navClosed].forEach(el => el.classList.toggle('nav__hide'));
 }
 
 const closeNav = () => {
@@ -19,5 +19,5 @@ const closeNav = () => {
     navClosed.classList.toggle('nav__hide');
     setTimeout(() => {
         navOpen.classList.toggle('nav__hide');
-    }, 1600);
+    }, 800);
 }

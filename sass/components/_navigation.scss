@@ -30,15 +30,12 @@
 }
 
 .nav {
-    
-    &.is-open {
-        display: block;
-        width: 100%;
-        height: max-content;
-        top: 0;
-        right: 0;
-        transform: translateY(100%);
-        transition: transform 1s ease-out;
+    &__logo {
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        font-family: $font-headings;
+        font-size: 2.5rem;
     }
 
     &__menu {
@@ -69,6 +66,10 @@
                 @include imgMax;
             }
         }
+
+        &--open {
+            fill: $color-white;
+        }
     }
 
     &__btn {
@@ -80,9 +81,10 @@
         align-items: center;
         border-radius: 50%;
         background-color: $color-white;
-        transition: transform .3s .5s linear;
+        transition: transform .3s .7s linear;
 
         &.is-open {
+            background-color: $color-black;
             transform: rotate(180deg);
         }
     }
@@ -103,6 +105,7 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        align-items: center;
         padding: 1rem 1rem 4rem 1rem;
         margin-top: -.5rem;
 
@@ -111,7 +114,7 @@
             align-items: center;
             font-size: 2.5rem;
             color: $color-white;
-            padding: .5rem;
+            padding: .7rem .5rem;
         }
     }
 

@@ -6060,12 +6060,12 @@ var toggleNav = function toggleNav() {
 exports.toggleNav = toggleNav;
 
 var openNav = function openNav() {
-  [navOpen, navClosed].forEach(function (el) {
-    return el.classList.toggle('nav__hide');
-  });
   navOpen.classList.toggle('is-open');
   navBtn.forEach(function (el) {
     return el.classList.toggle('is-open');
+  });
+  [navOpen, navClosed].forEach(function (el) {
+    return el.classList.toggle('nav__hide');
   });
 };
 
@@ -6077,7 +6077,7 @@ var closeNav = function closeNav() {
   navClosed.classList.toggle('nav__hide');
   setTimeout(function () {
     navOpen.classList.toggle('nav__hide');
-  }, 1600);
+  }, 800);
 };
 },{}],"index.js":[function(require,module,exports) {
 "use strict";
@@ -6173,7 +6173,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65106" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50641" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
