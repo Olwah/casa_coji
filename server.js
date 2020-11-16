@@ -10,7 +10,6 @@ process.on('uncaughtException', (err) => {
 dotenv.config({ path: './config.env' });
 const app = require('./app');
 
-/*
 // Access the MongoDB database path and replace the password variable in the string
 const DB = process.env.DATABASE.replace('<PASSWORD>', process.env.DATABASE_PASSWORD);
 
@@ -23,7 +22,6 @@ mongoose
         useUnifiedTopology: true,
     })
     .then(() => console.log('DB connection successful!'));
-*/
 
 const port = process.env.PORT || 3000;
 

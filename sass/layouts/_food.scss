@@ -1,0 +1,128 @@
+.food {
+    background-color: $color-black;
+
+    &__about {
+        background-color: $color-black;
+        color: $color-white;
+        font-family: $font-buttons;
+        padding: 1rem;
+
+        &-title {
+            font-size: 2rem;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: .5rem;
+        }
+
+        &-info {
+            font-size: 1.2rem;
+            font-weight: 500;
+            font-style: italic;
+        }
+    }
+
+    &__gallery {
+        width: 100%;
+        height: min-content;
+        background-color: $color-white;
+        padding-bottom: 3rem;
+    }
+
+    &__highlight {
+        position: absolute;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
+        background: linear-gradient(rgba(255, 235, 205, 0.6), rgba(255, 235, 205,0.6));
+        border-radius: 7px;
+        padding: .5rem;
+        margin: .5rem auto;
+
+        &-container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        &-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: .5rem;
+        }
+
+        &-info {
+            font-size: 1.2rem;
+            text-align: justify;
+        }
+
+        &-price {
+
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+    }
+
+    &__splide-arrow {
+        background: $color-white;
+        fill: $color-black;
+        opacity: 1;
+    }
+
+    &__drinks {
+        background-color: $color-white;
+        padding: 2rem .5rem;
+
+        &-title {
+            font-family: $font-headings;
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: .5rem;
+        }
+
+        &-about {
+            font-size: 1.2rem;
+        }
+
+        &-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: max-content;
+            margin: 1rem auto;
+
+            &--alcohol,
+            &--soft {
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 45vw;
+                height: 10rem;
+                font-family: $font-headings;
+                font-size: 1.4rem;
+                text-align: center;
+                letter-spacing: .2em;
+                color: $color-black;
+            }
+
+            &--alcohol {
+                background: linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.3)), url('/img/alcohol_placeholder.jpg');
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+
+            &--soft {
+                background: linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.3)), url('/img/soft_placeholder.jpg');
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+        }
+    }
+}
+
+#foodNav-slider {
+    padding: 1rem 0;
+}

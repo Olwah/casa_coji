@@ -1,4 +1,5 @@
-.nav {
+#nav-closed {
+    width: auto;
     height: 4rem;
     color: $color-white;
     display: flex;
@@ -8,6 +9,37 @@
     top: 1rem;
     right: 1.5rem;
     z-index: 10;
+}
+
+#nav-open {
+    opacity: 0;
+    display: block;
+    width: 100%;
+    height: max-content;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 15;
+    transform: translateY(-100%);
+    transition: transform .6s ease-out, opacity .3s linear;
+
+    &.is-open {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.nav {
+    
+    &.is-open {
+        display: block;
+        width: 100%;
+        height: max-content;
+        top: 0;
+        right: 0;
+        transform: translateY(100%);
+        transition: transform 1s ease-out;
+    }
 
     &__menu {
         display: flex;
@@ -28,6 +60,15 @@
         width: 2.5rem;
         height: 2.5rem; 
         margin-top: -.5rem;
+
+        &--large {
+            width: 100%;
+            background-color: $color-white;
+
+            & img {
+                @include imgMax;
+            }
+        }
     }
 
     &__btn {
@@ -39,5 +80,45 @@
         align-items: center;
         border-radius: 50%;
         background-color: $color-white;
+        transition: transform .3s .5s linear;
+
+        &.is-open {
+            transform: rotate(180deg);
+        }
+    }
+
+    &__hide {
+        visibility: hidden;
+    }
+
+    &__close {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+    }
+
+    &__list {
+        background-color: $color-black;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 1rem 1rem 4rem 1rem;
+        margin-top: -.5rem;
+
+        &-item {
+            display: flex;
+            align-items: center;
+            font-size: 2.5rem;
+            color: $color-white;
+            padding: .5rem;
+        }
+    }
+
+    &__menu-icon {
+        width: 2rem;
+        height: 2rem;
+        fill: $color-white;
+        margin-right: 1rem;
     }
 }

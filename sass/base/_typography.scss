@@ -1,0 +1,29 @@
+.hero {
+    position: relative;
+    width: 100%;
+    height: min-content;
+
+    &__title {
+        font-family: $font-headings;
+        font-size: 4.5rem;
+        letter-spacing: .1rem;
+        color: $color-white;
+        @include absCenter;
+        animation: flicker-in 3s linear both;
+        z-index: 10;
+    }
+
+    &__img {
+        width: 100%;
+
+        & img {
+            @include imgMax;
+        }
+    }
+}
+
+h4 {
+    font-family: $font-buttons;
+    font-size: 2rem;
+
+}

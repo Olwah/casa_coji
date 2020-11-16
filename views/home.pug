@@ -2,13 +2,8 @@ extends base
 
 block content
     .home
-        nav.nav
-            .nav__menu-lang ES | IN
-            .nav__btn
-                svg.nav__icon
-                    use(xlink:href='img/sprite.svg#icon-mountain')
         .home__overview.divider__mountain--bottom
-            .home__overview-title Casa Coji
+            .hero__title Casa Coji
             #hero-slider.splide
                 .splide__track
                     .splide__list
@@ -30,20 +25,32 @@ block content
         main
             .home__section.home__rooms.divider__mountain
                 .home__section-title Rooms
-                button#rooms-info.btn.home__section-btn View Rooms   
+                .home__section-details
+                    em From $5 / night
+                a#rooms-info.btn.home__section-btn(href='/rooms') View Rooms   
             .home__section.home__food.divider__mountain 
                 .home__section-title Food
-                button#food-info.btn.home__section-btn View Food
+                .home__section-details 
+                    em $3 half - $5 full plate
+                a#food-info.btn.home__section-btn(href='/food') View Food
             .home__section.home__camping.divider__mountain 
                 .home__section-title Camping
-                button#camping-info.btn.home__section-btn View Camping
+                .home__section-details 
+                    em From $2 / night
+                a#camping-info.btn.home__section-btn(href='/camping') View Camping
             .home__section.home__activities.divider__mountain 
                 .home__section-title Activities
-                button#activities-info.btn.home__section-btn View Activities
+                .home__section-details 
+                    em Climbing / Biking / Running + more!
+                a#activities-info.btn.home__section-btn(href='/activities') View Activities
             .home__section.home__courses.divider__mountain 
                 .home__section-title Courses
-                button#courses-info.btn.home__section-btn View Courses
+                .home__section-details 
+                    em Courses from $xxx
+                a#courses-info.btn.home__section-btn(href='/courses') View Courses
             .home__section.home__equipment.divider__mountain 
                 .home__section-title Equipment
-                button#equipment-info.btn.home__section-btn View Equipment
+                .home__section-details 
+                    em Rent equipment from $xxx / day
+                a#equipment-info.btn.home__section-btn(href='/equipment') View Equipment
         .home__merge

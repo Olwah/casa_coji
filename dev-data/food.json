@@ -1,0 +1,18 @@
+[
+    {
+        "name": "Falafel Burrito",
+        "price": 5,
+        "priceHalfPortion": 3,
+        "summary": "Two falafel burritos inc salad + chips",
+        "description": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\nLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "image": "food_placeholder.png"
+    },
+    {
+        "name": "Mushroom Risotto",
+        "price": 5,
+        "priceHalfPortion": 3,
+        "summary": "Delicious mushroom risotto inc salad",
+        "description": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\nLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "image": "food_placeholder.png"
+    }
+]
