@@ -19,30 +19,31 @@ nav#nav-open.nav__hide
         .nav__list-item 
             svg.nav__menu-icon
                 use(xlink:href='img/svg/sprite.svg#icon-home') 
-            h4 Home
+            h4 <a href='/'>Home</a>
         .nav__list-item 
             svg.nav__menu-icon
                 use(xlink:href='img/svg/sprite.svg#icon-bed') 
-            h4 Rooms
+            h4 <a href='/rooms'>Rooms</a>
         .nav__list-item 
             svg.nav__menu-icon
                 use(xlink:href='img/svg/sprite.svg#icon-restaurant') 
-            h4 Food
+            h4 <a href='/food'>Food</a>
         .nav__list-item 
             svg.nav__menu-icon
                 use(xlink:href='img/svg/sprite.svg#icon-camping') 
-            h4 Camping
+            h4 <a href='/camping'>Camping</a>
         .nav__list-item 
             svg.nav__menu-icon
                 use(xlink:href='img/svg/sprite.svg#icon-climbing') 
-            h4 Courses
+            h4 <a href='/courses'>Courses</a>
         .nav__list-item
             svg.nav__menu-icon
                 use(xlink:href='img/svg/sprite.svg#icon-carabiner') 
-            h4 Equipment
+            h4 <a href='/equipment'>Equipment</a>
         .nav__list-item
-            svg.nav__menu-icon
-                use(xlink:href='img/svg/sprite.svg#icon-telephone') 
-            h4 Contact
-
-
+            svg.nav__menu-icon.nav__menu-icon--contact
+                use(xlink:href='img/svg/sprite.svg#icon-telephone')
+            .nav__list-item--contact
+                h4 Contact
+                p.nav__list-item--whatsapp <a href='https://wa.me/593992859691'>+593-992-859-691</a>
+                p.nav__list-item--email <a href='mailto:casa_coji@gmail.com'>casa_coji@gmail.com</a>

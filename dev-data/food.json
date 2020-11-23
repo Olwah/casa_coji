@@ -1,18 +1,24 @@
 [
     {
         "name": "Falafel Burrito",
+        "nombre": "Burrito de Falafel",
         "price": 5,
         "priceHalfPortion": 3,
         "summary": "Two falafel burritos inc salad + chips",
+        "sumario": "Dos burrito de falafel con ensalada y papa fritas",
         "description": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\nLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "descripción": "Descripción en español aca...",
         "image": "food_placeholder.png"
     },
     {
         "name": "Mushroom Risotto",
+        "nombre": "Risotto de hongos",
         "price": 5,
         "priceHalfPortion": 3,
         "summary": "Delicious mushroom risotto inc salad",
+        "sumario": "Risotto de hongos con ensalada y papa fritas",
         "description": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\nLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "descripción": "Descripción en español aca...",
         "image": "food_placeholder.png"
     }
 ]

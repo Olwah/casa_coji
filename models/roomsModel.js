@@ -1,7 +1,12 @@
 const mongoose = require('mongoose');
 const validator = require('validator');
 
-const foodSchema = new mongoose.Schema({
+const roomsSchema = new mongoose.Schema({
+    roomId: {
+        type: Number,
+        unique: true,
+        required: [true, 'Please enter a roomID']
+    },
     name: {
         type: String,
         trim: true,
@@ -18,13 +23,15 @@ const foodSchema = new mongoose.Schema({
         type: Number,
         required: [true, 'Please enter a price.']
     },
-    priceHalfPortion: {
-        type: Number
+    sleeps: {
+        type: Number,
+        required: [true, 'Please enter the number of beds available.']
     },
-    image: {
+    imageCover: {
         type: String,
-        default: 'food_placeholder.png'
+        default: 'casa_coji_main_2.jpg'
     },
+    images: [String], // Specifies an array of strings
     summary: {
         type: String,
         trim: true
@@ -43,6 +50,6 @@ const foodSchema = new mongoose.Schema({
     }
 });
 
-const Food = mongoose.model('Food', foodSchema);
+const Rooms = mongoose.model('Rooms', roomsSchema);
 
-module.exports = Food;
+module.exports = Rooms;

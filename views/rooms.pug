@@ -1,0 +1,32 @@
+extends base
+
+block content
+    .rooms
+        .hero.divider__mountain--bottom
+            .hero__title Rooms
+            .hero__img
+                img(src='img/casa_coji_main.jpeg')
+        .rooms__about.divider__mountain
+            h2.rooms__about-title Accomodation
+            h3.rooms__about-info Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate amet nobis esse modi. Nihil sint praesentium ipsum consequatur id, similique consequuntur minima! Mollitia, aut? Velit ab aspernatur suscipit quidem qui? 
+        .rooms__overview
+            each room in rooms
+                .rooms__item.divider__mountain
+                    img(src=`img/${room.imageCover}`)
+                    .rooms__item-info
+                        h3.rooms__item-title= `${room.name}`
+                        h4.rooms__item-price= `$${room.price} / night`
+                        .rooms__expand(data-room-id=`${room._id}`)
+                            svg.rooms__expand-icon
+                                use(xlink:href='img/svg/sprite.svg#icon-mountain')
+                    //- Details visible on click
+                    .rooms__details
+                        .padding-top-small
+                        h3.rooms__details-title= `${room.name}`
+                        h4.rooms__details-price= `$${room.price} / night`
+                        .rooms__gallery
+                            - let z = 0;
+                            each image in room.images
+                                .rooms__gallery-item(class=`rooms__gallery-item--${z++}`)
+                                    img(src=`img/${image}`)
+                        .rooms__buffer

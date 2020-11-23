@@ -7,7 +7,7 @@ const router = express.Router();
 router.get('/', viewsController.getHome);
 
 // CATEGORIES
-//router.get('/rooms', viewsController.getRooms);
+router.get('/rooms', viewsController.getRooms);
 router.get('/food', viewsController.getFood);
 
 module.exports = router;

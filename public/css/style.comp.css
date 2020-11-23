@@ -101,13 +101,46 @@ html {
   background-color: blanchedalmond; }
 
 body {
-  font-family: sans-serif; }
+  font-family: "Thasadith", sans-serif; }
+
+.padding-top-small {
+  padding-top: 1rem; }
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: min-content; }
+  .hero__title {
+    font-family: "Mrs Sheppards", cursive;
+    font-size: 4.5rem;
+    letter-spacing: .1rem;
+    color: blanchedalmond;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: flicker-in 3s linear both;
+    z-index: 10; }
+  .hero__img {
+    width: 100%; }
+    .hero__img img {
+      max-width: 100%;
+      max-height: 100%; }
+
+a {
+  color: inherit;
+  text-decoration: none; }
+
+h4 {
+  font-family: "Thasadith", sans-serif;
+  font-size: 2rem; }
 
 .btn {
   font-family: "Thasadith", sans-serif;
   font-size: 1.5rem;
   font-weight: bold;
   text-transform: uppercase;
+  text-decoration: none;
   padding: 1rem 1.5rem;
   background-color: #000;
   color: blanchedalmond;
@@ -122,6 +155,7 @@ body {
   position: fixed;
   bottom: 2rem;
   right: 1rem;
+  z-index: 20;
   animation: slide-in-br 2s 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both; }
   .whatsapp img {
     max-width: 100%;
@@ -164,7 +198,8 @@ body {
     justify-content: center;
     color: blanchedalmond; }
 
-.nav {
+#nav-closed {
+  width: auto;
   height: 4rem;
   color: blanchedalmond;
   display: flex;
@@ -174,30 +209,207 @@ body {
   top: 1rem;
   right: 1.5rem;
   z-index: 10; }
-  .nav__menu {
+
+#nav-open {
+  opacity: 0;
+  display: block;
+  width: 100%;
+  height: max-content;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 15;
+  transform: translateY(-100%);
+  transition: transform .6s ease-out, opacity .3s linear; }
+  #nav-open.is-open {
+    opacity: 1;
+    transform: translateY(0); }
+
+.nav__logo {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  font-family: "Mrs Sheppards", cursive;
+  font-size: 2.5rem; }
+
+.nav__menu {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center; }
+  .nav__menu-lang {
     display: flex;
-    justify-content: flex-end;
-    align-items: center; }
-    .nav__menu-lang {
-      display: flex;
-      font-family: "Thasadith", sans-serif;
-      font-size: 1.4rem;
-      font-weight: bold;
-      margin-right: 1rem;
-      color: #000; }
-  .nav__icon {
-    width: 2.5rem;
-    height: 2.5rem;
-    margin-top: -.5rem; }
-  .nav__btn {
-    width: 3.5rem;
-    height: 3.5rem;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
+    font-family: "Thasadith", sans-serif;
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-right: 1rem;
+    color: #000; }
+
+.nav__icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-top: -.5rem; }
+  .nav__icon--large {
+    width: 100%;
     background-color: blanchedalmond; }
+    .nav__icon--large img {
+      max-width: 100%;
+      max-height: 100%; }
+  .nav__icon--open {
+    fill: blanchedalmond; }
+
+.nav__btn {
+  width: 3.5rem;
+  height: 3.5rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: blanchedalmond;
+  transition: transform .3s .7s linear; }
+  .nav__btn.is-open {
+    background-color: #000;
+    transform: rotate(180deg); }
+
+.nav__hide {
+  visibility: hidden; }
+
+.nav__close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem; }
+
+.nav__list {
+  background-color: #000;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0.5rem 6rem 4rem 6rem;
+  margin-top: -.5rem; }
+  .nav__list-item {
+    display: flex;
+    align-items: center;
+    font-size: 2.5rem;
+    color: blanchedalmond;
+    padding: .7rem .5rem; }
+    .nav__list-item--contact {
+      display: flex;
+      flex-direction: column; }
+      .nav__list-item--contact-details {
+        display: flex;
+        justify-content: center;
+        align-items: center; }
+    .nav__list-item--whatsapp, .nav__list-item--email {
+      display: flex;
+      align-items: center;
+      font-size: 1.5rem; }
+      .nav__list-item--whatsapp::before, .nav__list-item--email::before {
+        content: '';
+        display: block;
+        background-image: url("../img/svg/speech-bubble.svg");
+        width: 2rem;
+        height: 2rem; }
+
+.nav__menu-icon {
+  width: 2rem;
+  height: 2rem;
+  fill: blanchedalmond;
+  margin-right: 1rem; }
+  .nav__menu-icon--contact {
+    align-self: flex-start; }
+
+.food {
+  background-color: #000; }
+  .food__about {
+    background-color: #000;
+    color: blanchedalmond;
+    font-family: "Thasadith", sans-serif;
+    padding: 1rem; }
+    .food__about-title {
+      font-size: 2rem;
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: .5rem; }
+    .food__about-info {
+      font-size: 1.2rem;
+      font-weight: 500;
+      font-style: italic; }
+  .food__gallery {
+    width: 100%;
+    height: min-content;
+    background-color: blanchedalmond; }
+  .food__highlight {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    background: linear-gradient(rgba(255, 235, 205, 0.6), rgba(255, 235, 205, 0.6));
+    border-radius: 7px;
+    padding: .5rem;
+    margin: .5rem auto; }
+    .food__highlight-container {
+      display: flex;
+      flex-direction: column; }
+    .food__highlight-title {
+      font-size: 1.3rem;
+      font-weight: bold;
+      margin-bottom: .5rem; }
+    .food__highlight-info {
+      font-size: 1.2rem;
+      text-align: justify; }
+    .food__highlight-price {
+      font-size: 1.3rem;
+      font-weight: bold; }
+  .food__splide-arrow {
+    background: #000;
+    fill: blanchedalmond;
+    opacity: 1; }
+  .food__drinks {
+    background-color: blanchedalmond;
+    padding: 2rem .5rem; }
+    .food__drinks-title {
+      font-family: "Mrs Sheppards", cursive;
+      font-size: 3rem;
+      text-align: center;
+      margin-bottom: .5rem; }
+    .food__drinks-about {
+      font-size: 1.2rem; }
+    .food__drinks-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: max-content;
+      margin: 1rem auto; }
+      .food__drinks-item--alcohol, .food__drinks-item--soft {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 45vw;
+        height: 10rem;
+        font-family: "Mrs Sheppards", cursive;
+        font-size: 1.4rem;
+        text-align: center;
+        letter-spacing: .2em;
+        color: #000; }
+      .food__drinks-item--alcohol {
+        background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url("/img/alcohol_placeholder.jpg");
+        background-size: cover;
+        background-repeat: no-repeat; }
+      .food__drinks-item--soft {
+        background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url("/img/soft_placeholder.jpg");
+        background-size: cover;
+        background-repeat: no-repeat; }
+
+#foodNav-slider {
+  background-color: #000;
+  padding: 1rem 0; }
 
 .home {
   background-color: #000;
@@ -270,6 +482,10 @@ body {
       font-weight: 600;
       color: #000;
       letter-spacing: .5rem; }
+    .home__section-details {
+      font-family: "Thasadith", sans-serif;
+      font-size: 1.5rem;
+      font-weight: 600; }
   .home__rooms {
     background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url("/img/casa_coji_main.jpeg") no-repeat;
     background-size: cover; }
@@ -291,3 +507,127 @@ body {
     background-size: cover; }
   .home__merge {
     height: 2rem; }
+
+.rooms {
+  background-color: #000;
+  /*
+    &__hide {
+        height: 0;
+    }
+    */ }
+  .rooms__about {
+    background-color: #000;
+    color: blanchedalmond;
+    font-family: "Thasadith", sans-serif;
+    padding: 1rem; }
+    .rooms__about-title {
+      font-size: 2rem;
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 0.5rem; }
+    .rooms__about-info {
+      font-size: 1.2rem;
+      font-weight: 500;
+      font-style: italic; }
+  .rooms__overview {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: max-content;
+    padding: 1rem; }
+  .rooms__item {
+    position: relative;
+    width: 80vw;
+    height: auto;
+    margin-bottom: 3rem; }
+    .rooms__item img {
+      max-width: 100%;
+      max-height: 100%; }
+    .rooms__item-info {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      top: 9rem;
+      color: blanchedalmond;
+      height: max-content;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-top: 2rem; }
+    .rooms__item-title, .rooms__item-price {
+      opacity: 1;
+      transition: opacity .2s ease-out; }
+      .rooms__item-title.is-active, .rooms__item-price.is-active {
+        opacity: 0; }
+    .rooms__item-title {
+      font-family: "Mrs Sheppards", cursive;
+      font-size: 1.8rem;
+      letter-spacing: 0.1em;
+      margin-bottom: 1rem; }
+    .rooms__item-price {
+      font-size: 1.2rem;
+      text-align: center;
+      font-style: italic;
+      margin-bottom: 3rem; }
+  .rooms__expand {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: 0.5rem;
+    transform: rotate(0deg);
+    transition: transform .2s linear; }
+    .rooms__expand.is-active {
+      transform: rotate(180deg); }
+    .rooms__expand-icon {
+      fill: blanchedalmond;
+      height: inherit;
+      transform: rotate(180deg);
+      margin-top: 0.3rem; }
+  .rooms__details {
+    background-color: blanchedalmond;
+    color: #000;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .2s ease-out; }
+    .rooms__details-title, .rooms__details-price {
+      padding: 0 1rem; }
+    .rooms__details-title {
+      font-family: "Mrs Sheppards", cursive;
+      font-size: 1.4rem;
+      letter-spacing: 0.1em; }
+    .rooms__details-price {
+      font-family: "Thasadith", sans-serif;
+      font-size: 1.2rem; }
+  .rooms__gallery {
+    width: 100%;
+    height: max-content;
+    display: grid;
+    grid-template-rows: repeat(4, minmax(5rem, 1fr));
+    grid-template-columns: repeat(4, minmax(5rem, 1fr));
+    gap: 0.5rem;
+    padding: 1rem 0.5rem; }
+    .rooms__gallery-item--0 {
+      grid-row: 1 / -1;
+      grid-column: 1 / 3; }
+    .rooms__gallery-item--1 {
+      grid-row: 1 / 3;
+      grid-column: 3 / -1; }
+    .rooms__gallery-item--2 {
+      grid-row: 3 / -1;
+      grid-column: 3 / -1; }
+    .rooms__gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block; }
+  .rooms__buffer {
+    height: 3rem;
+    background-color: blanchedalmond; }
