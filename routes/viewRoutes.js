@@ -7,7 +7,9 @@ const router = express.Router();
 router.get('/', viewsController.getHome);
 
 // CATEGORIES
-router.get('/rooms', viewsController.getRooms);
-router.get('/food', viewsController.getFood);
+router.get('/accommodation', viewsController.getAccommodation);
+router.get('/restaurant', viewsController.getRestaurant);
+router.get('/climbing', viewsController.getClimbing);
+router.get('/equipment', viewsController.getEquipment);
 
 module.exports = router;

@@ -1,0 +1,81 @@
+.climbing {
+    background-color: $color-black;
+
+    &__main {
+        color: $color-white;
+        padding: 1rem 0.5rem;
+    }
+
+    &__sectors {
+        position: relative;
+        width: 100%;
+        height: auto;
+        margin-top: -1rem;
+
+        & img {
+            @include imgMax;
+        }
+    }
+
+    &__temporary {
+        @include absCenter;
+        font-size: 1.5rem;
+    }
+
+    &__routes {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(3, max-content);
+        align-items: center;
+        justify-items: center;
+        gap: 0.5rem;
+        margin: 1rem 0 1.5rem 0;
+
+        &-title {
+            grid-row: 1 / 1;
+            grid-column: 1 / -1;
+            font-family: $font-headings;
+            font-size: 2.5rem;
+            letter-spacing: .15em;
+        }
+    }
+
+    &__intro {
+        grid-row: 2 / 3;
+        grid-column: 1 / -1;
+        justify-self: flex-start;
+        font-size: 1.5rem;
+    }
+
+    &__grade {
+        color: $color-white;
+        padding: 0.5rem;
+        border: 1px solid $color-white;
+        border-radius: 4px;
+
+        &--trad {
+            grid-row: 3 / -1;
+            grid-column: 1 / -1;
+            justify-self: stretch;
+        }
+    }
+
+    &__route-quantity {
+        font-size: 3rem;
+        font-weight: 800;
+        text-align: center;
+
+        &--intermediate {
+            color: yellow;
+        }
+
+        &--advanced {
+            color: red;
+        }
+    }
+
+    &__level {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+}

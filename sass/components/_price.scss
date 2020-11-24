@@ -1,0 +1,24 @@
+.price {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 3rem;
+    height: 3rem;
+    background-color: $color-black;
+    color: $color-white;
+    border-radius: 50%;
+
+    &__value {
+        position: absolute;
+        @include absCenter;
+        font-size: 1.5rem;
+    }
+
+    &__icon {
+        width: 2rem;
+        height: 2rem;
+        fill: $color-white;
+        z-index: 10;
+    }
+}

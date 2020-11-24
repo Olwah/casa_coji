@@ -1,6 +1,6 @@
 [
     {
-        "id": 0,
+        "roomId": 0,
         "name": "Double Room",
         "nombre": "Habitacion Doble",
         "price": 8,
@@ -13,13 +13,26 @@
         "images": ["casa_coji_main_2.jpg", "casa_coji_main_2.jpg", "casa_coji_main_2.jpg"]
     },
     {
-        "id": 1,
+        "roomId": 1,
         "name": "Shared Room",
         "nombre": "Habitacion Compartido",
         "price": 5,
         "sleeps": 6,
         "summary": "Sleeps six people",
         "sumario": "Para seis personas",
+        "description": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\nLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "descripción": "Descripción en español aca...",
+        "imageCover": "casa_coji_main_2.jpg",
+        "images": ["casa_coji_main_2.jpg", "casa_coji_main_2.jpg", "casa_coji_main_2.jpg"]
+    },
+    {
+        "roomId": 2,
+        "name": "Camping",
+        "nombre": "Camping",
+        "price": 3,
+        "sleeps": 6,
+        "summary": "We have plenty of space for you to pitch your tent!",
+        "sumario": "Tenemos bastante espacio para carpas!",
         "description": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\nLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         "descripción": "Descripción en español aca...",
         "imageCover": "casa_coji_main_2.jpg",

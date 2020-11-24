@@ -71,7 +71,7 @@
     }
 
     &__rooms {
-        background: linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.3)), url('/img/casa_coji_main.jpeg') no-repeat;
+        background: linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.3)), url('/img/camping_placeholder.jpg') no-repeat;
         background-size: cover;
     }
 
@@ -80,17 +80,12 @@
         background-size: cover;
     }
 
-    &__camping {
-        background: linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.3)), url('/img/camping_placeholder.jpg') no-repeat;
-        background-size: cover;
-    }
-
     &__activities {
         background: linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.3)), url('/img/activities_placeholder.jpg') no-repeat center;
         background-size: cover;
     }
 
-    &__courses {
+    &__climbing {
         background: linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.3)), url('/img/courses_placeholder.jpg') no-repeat;
         background-size: cover;
         background-position-x: -3rem;
@@ -99,6 +94,12 @@
     &__equipment {
         background: linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.3)), url('/img/equipment_placeholder.jpg') no-repeat;
         background-size: cover;
+    }
+
+    &__combos {
+        background: linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.3)), url('/img/combo_placeholder.jpg') no-repeat;
+        background-size: cover;
+        background-position-y: -13rem;
     }
 
     &__merge {

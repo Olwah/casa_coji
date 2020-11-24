@@ -103,6 +103,21 @@ html {
 body {
   font-family: "Thasadith", sans-serif; }
 
+.hero__about {
+  background-color: #000;
+  color: blanchedalmond;
+  font-family: "Thasadith", sans-serif;
+  padding: 1rem; }
+  .hero__about-title {
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 0.5rem; }
+  .hero__about-info {
+    font-size: 1.2rem;
+    font-weight: 500;
+    font-style: italic; }
+
 .padding-top-small {
   padding-top: 1rem; }
 
@@ -286,7 +301,7 @@ h4 {
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
-  padding: 0.5rem 6rem 4rem 6rem;
+  padding: 0.5rem 5rem 4rem 5rem;
   margin-top: -.5rem; }
   .nav__list-item {
     display: flex;
@@ -320,22 +335,135 @@ h4 {
   .nav__menu-icon--contact {
     align-self: flex-start; }
 
+.price {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 3rem;
+  height: 3rem;
+  background-color: #000;
+  color: blanchedalmond;
+  border-radius: 50%; }
+  .price__value {
+    position: absolute;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5rem; }
+  .price__icon {
+    width: 2rem;
+    height: 2rem;
+    fill: blanchedalmond;
+    z-index: 10; }
+
+.climbing {
+  background-color: #000; }
+  .climbing__main {
+    color: blanchedalmond;
+    padding: 1rem 0.5rem; }
+  .climbing__sectors {
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin-top: -1rem; }
+    .climbing__sectors img {
+      max-width: 100%;
+      max-height: 100%; }
+  .climbing__temporary {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5rem; }
+  .climbing__routes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, max-content);
+    align-items: center;
+    justify-items: center;
+    gap: 0.5rem;
+    margin: 1rem 0 1.5rem 0; }
+    .climbing__routes-title {
+      grid-row: 1 / 1;
+      grid-column: 1 / -1;
+      font-family: "Mrs Sheppards", cursive;
+      font-size: 2.5rem;
+      letter-spacing: .15em; }
+  .climbing__intro {
+    grid-row: 2 / 3;
+    grid-column: 1 / -1;
+    justify-self: flex-start;
+    font-size: 1.5rem; }
+  .climbing__grade {
+    color: blanchedalmond;
+    padding: 0.5rem;
+    border: 1px solid blanchedalmond;
+    border-radius: 4px; }
+    .climbing__grade--trad {
+      grid-row: 3 / -1;
+      grid-column: 1 / -1;
+      justify-self: stretch; }
+  .climbing__route-quantity {
+    font-size: 3rem;
+    font-weight: 800;
+    text-align: center; }
+    .climbing__route-quantity--intermediate {
+      color: yellow; }
+    .climbing__route-quantity--advanced {
+      color: red; }
+  .climbing__level {
+    font-size: 1.5rem;
+    text-align: center; }
+
+.equipment {
+  background-color: #000; }
+  .equipment__main {
+    background-color: blanchedalmond;
+    padding: 2rem .5rem;
+    margin-top: 1rem; }
+  .equipment__items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr));
+    gap: 1rem .5rem; }
+  .equipment__item {
+    position: relative; }
+    .equipment__item-info {
+      height: 70%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); }
+    .equipment__item-name {
+      font-family: "Mrs Sheppards", cursive;
+      font-size: 2.5rem;
+      letter-spacing: .1em;
+      -webkit-text-stroke: 1px springgreen; }
+    .equipment__item-price {
+      width: 2.5rem;
+      height: 2.5rem;
+      background-color: #000;
+      border-radius: 50%;
+      color: blanchedalmond;
+      font-family: "Thasadith", sans-serif;
+      font-size: 1rem;
+      font-style: italic;
+      font-weight: bold;
+      border: 1px blanchedalmond solid;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+    .equipment__item img {
+      max-width: 100%;
+      max-height: 100%; }
+
 .food {
   background-color: #000; }
-  .food__about {
-    background-color: #000;
-    color: blanchedalmond;
-    font-family: "Thasadith", sans-serif;
-    padding: 1rem; }
-    .food__about-title {
-      font-size: 2rem;
-      font-weight: 600;
-      text-align: center;
-      margin-bottom: .5rem; }
-    .food__about-info {
-      font-size: 1.2rem;
-      font-weight: 500;
-      font-style: italic; }
   .food__gallery {
     width: 100%;
     height: min-content;
@@ -487,24 +615,25 @@ h4 {
       font-size: 1.5rem;
       font-weight: 600; }
   .home__rooms {
-    background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url("/img/casa_coji_main.jpeg") no-repeat;
+    background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url("/img/camping_placeholder.jpg") no-repeat;
     background-size: cover; }
   .home__food {
     background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url("/img/food_placeholder.png") no-repeat;
     background-size: cover; }
-  .home__camping {
-    background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url("/img/camping_placeholder.jpg") no-repeat;
-    background-size: cover; }
   .home__activities {
     background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url("/img/activities_placeholder.jpg") no-repeat center;
     background-size: cover; }
-  .home__courses {
+  .home__climbing {
     background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url("/img/courses_placeholder.jpg") no-repeat;
     background-size: cover;
     background-position-x: -3rem; }
   .home__equipment {
     background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url("/img/equipment_placeholder.jpg") no-repeat;
     background-size: cover; }
+  .home__combos {
+    background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url("/img/combo_placeholder.jpg") no-repeat;
+    background-size: cover;
+    background-position-y: -13rem; }
   .home__merge {
     height: 2rem; }
 
@@ -515,20 +644,6 @@ h4 {
         height: 0;
     }
     */ }
-  .rooms__about {
-    background-color: #000;
-    color: blanchedalmond;
-    font-family: "Thasadith", sans-serif;
-    padding: 1rem; }
-    .rooms__about-title {
-      font-size: 2rem;
-      font-weight: 600;
-      text-align: center;
-      margin-bottom: 0.5rem; }
-    .rooms__about-info {
-      font-size: 1.2rem;
-      font-weight: 500;
-      font-style: italic; }
   .rooms__overview {
     display: flex;
     flex-direction: column;

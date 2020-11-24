@@ -1,0 +1,55 @@
+.equipment {
+    background-color: $color-black;
+
+    &__main {
+        background-color: $color-white;
+        padding: 2rem .5rem;
+        margin-top: 1rem;
+    }
+
+    &__items {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr));
+        gap: 1rem .5rem;
+    }
+
+    &__item {
+        position: relative;
+
+        &-info {
+            height: 70%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            @include absCenter;
+        }
+
+        &-name {
+            font-family: $font-headings;
+            font-size: 2.5rem;
+            letter-spacing: .1em;
+            -webkit-text-stroke: 1px springgreen;
+        }
+
+        &-price {
+            width: 2.5rem;
+            height: 2.5rem;
+            background-color: $color-black;
+            border-radius: 50%;
+            color: $color-white;
+            font-family: $font-buttons;
+            font-size: 1rem;
+            font-style: italic;
+            font-weight: bold;
+            border: 1px $color-white solid;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        & img {
+            @include imgMax;
+        }
+    }
+}
