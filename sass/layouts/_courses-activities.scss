@@ -1,0 +1,101 @@
+.activities {
+    background-color: $color-black;
+
+    &__mountain {
+        background-image: url('../img/svg/mountain-outline.svg');
+        width: 100%;
+        height: 8rem;
+        background-repeat: no-repeat;
+        background-position-x: right;
+        margin: -2.5rem 0;
+    }
+
+    &__main {
+        padding: 1rem 0.5rem;
+    }
+
+    &__items {
+        background-color: $color-white;
+        padding-bottom: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    &__type {
+        font-family: $font-headings;
+        font-size: 5rem;
+        text-align: center;
+        letter-spacing: .1em;
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        border: 5px solid $color-white;
+        background-color: $color-black;
+        color: blanchedalmond;
+        outline: 1px solid $color-black;
+        margin: 0 .5rem 1rem .5rem;
+    }
+
+    &__img {
+        position: relative;
+        width: 100%;
+        margin-bottom: .5rem;
+
+        & img {
+            @include imgMax;
+        }
+    }
+
+    &__title {
+        @include absCenter;
+        font-family: $font-headings;
+        font-size: 2rem;
+        letter-spacing: 0.1em;
+        width: 100%;
+        text-align: center;
+    }
+
+    &__details {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    &__card {
+        display: flex;
+        flex-direction: column;
+
+        &-item {
+            display: flex;
+            align-items: center;
+            margin: .5rem 0;
+        }
+
+        &-icon {
+            width: 3rem;
+            height: 3rem;
+            fill: $color-white;
+            align-self: flex-start;
+            margin-right: 2rem;
+        }
+
+        &-text {
+            width: 80%;
+        }
+
+        &-summary {
+            font-size: 2rem;
+            font-weight: 800;
+        }
+
+        &-description {
+            font-size: 1.3rem;
+        }
+
+        &-value {
+            font-family: $font-headings;
+            font-size: 2rem;
+        }
+    }
+}

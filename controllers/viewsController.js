@@ -1,6 +1,7 @@
 const Rooms = require('../models/roomsModel');
 const Food = require('../models/foodModel');
 const Equipment = require('../models/equipmentModel');
+const Courses = require('../models/coursesActivitiesModel');
 const catchAsync = require('../utils/catchAsync');
 
 exports.getHome = (req, res, next) => {
@@ -20,7 +21,6 @@ exports.getRestaurant = catchAsync(async (req, res, next) => {
 
 exports.getAccommodation = catchAsync(async (req, res, next) => {
     const rooms = await Rooms.find();
-    console.log(rooms);
 
     res.status(200).render('accommodation', {
         title: 'Accommodation',
@@ -36,10 +36,24 @@ exports.getClimbing = catchAsync(async (req, res, next) => {
 
 exports.getEquipment = catchAsync(async (req, res, next) => {
     const equipment = await Equipment.find();
-    console.log(equipment);
 
     res.status(200).render('equipment', {
         title: 'Rent Equipment',
         equipment
+    });
+});
+
+exports.getCoursesActivities = catchAsync(async (req, res, next) => {
+    const courses = await Courses.find();
+
+    res.status(200).render('coursesActivities', {
+        title: 'Courses & Activities',
+        courses
+    });
+});
+
+exports.getCombos = catchAsync(async (req, res, next) => {
+    res.status(200).render('combos', {
+        title: 'Combos'
     });
 });

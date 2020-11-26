@@ -1,0 +1,52 @@
+extends base
+
+block content
+    .activities
+        .hero.divider__mountain--bottom
+            .hero__title Courses /<br> Activities
+            .hero__img
+                img(src='img/courses_placeholder.jpg')
+        .hero__about.divider__mountain
+            h2.hero__about-title Courses & Activities
+            h3.hero__about-info Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate amet nobis esse modi. Nihil sint praesentium ipsum consequatur id, similique consequuntur minima! Mollitia, aut? Velit ab aspernatur suscipit quidem qui?
+        main.activities__main
+            .activities__items
+                - let coursesOnly = [];
+                - let activitiesOnly = [];
+                - courses.forEach(el => { if (el.isCourse) { coursesOnly.push(el) } else { activitiesOnly.push(el) }})
+                .activities__type Courses
+                each item in coursesOnly
+                    .activities__mountain
+                    .activities__item
+                        .activities__img.divider__mountain
+                            .activities__title= item.name
+                            img(src=`img/${item.imageCover}`)
+                        .activities__card
+                            .activities__card-item
+                                svg.activities__card-icon
+                                    use(xlink:href='img/svg/sprite.svg#icon-question')
+                                .activities__card-text.activities__card-summary= item.summary
+                            .activities__card-item
+                                svg.activities__card-icon
+                                    use(xlink:href='img/svg/sprite.svg#icon-info')
+                                .activities__card-text.activities__card-description= item.description
+                            .activities__card-item
+                                svg.activities__card-icon
+                                    use(xlink:href='img/svg/sprite.svg#icon-coin-dollar')
+                                .activities__card-text.activities__card-value= `$${item.price}`
+            .activities__items
+                .activities__type Activities
+                each item in activitiesOnly
+                    .activities__item
+                        .activities__img.divider__mountain
+                            .activities__title= item.name
+                            img(src=`img/${item.imageCover}`)
+                        .activities__card
+                            .activities__card-item
+                                svg.activities__card-icon
+                                    use(xlink:href='img/svg/sprite.svg#icon-question')
+                                .activities__card-text.activities__card-summary= item.summary
+                            .activities__card-item
+                                svg.activities__card-icon
+                                    use(xlink:href='img/svg/sprite.svg#icon-info')
+                                .activities__card-text.activities__card-description= item.description

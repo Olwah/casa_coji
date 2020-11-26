@@ -1,0 +1,57 @@
+[
+    {
+        "name": "Trail Running",
+        "nombre": "Corriendo",
+        "isCourse": false,
+        "price": null,
+        "summary": "Trail running around Cojitambo",
+        "sumario": "Descripción en español aca...",
+        "description": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\nLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "descripción": "Descripción en español aca...",
+        "imageCover": "activities_placeholder.jpg"
+    },
+    {
+        "name": "Mountain Biking",
+        "nombre": "Bicicleta de Montaña",
+        "isCourse": false,
+        "price": null,
+        "summary": "Mountain biking around Cojitambo",
+        "sumario": "Descripción en español aca...",
+        "description": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\nLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "descripción": "Descripción en español aca...",
+        "imageCover": "activities_placeholder.jpg"
+    },
+    {
+        "name": "Yoga",
+        "nombre": "Yoga",
+        "isCourse": true,
+        "price": 15,
+        "summary": "Yoga session in Casa Coji",
+        "sumario": "Descripción en español aca...",
+        "description": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\nLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "descripción": "Descripción en español aca...",
+        "imageCover": "yoga_placeholder.jpg"
+    },
+    {
+        "name": "2 Day Climbing Course",
+        "nombre": "Curso de Escalar",
+        "isCourse": true,
+        "price": 75,
+        "summary": "2 day climbing course for beginners",
+        "sumario": "Descripción en español aca...",
+        "description": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\nLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "descripción": "Descripción en español aca...",
+        "imageCover": "climbing_placeholder_2.jpg"
+    },
+    {
+        "name": "5 Day Climbing Course",
+        "nombre": "Curso de Escalar",
+        "isCourse": true,
+        "price": 150,
+        "summary": "5 day climbing course for beginners / intermediate",
+        "sumario": "Descripción en español aca...",
+        "description": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\nLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "descripción": "Descripción en español aca...",
+        "imageCover": "climbing_placeholder_2.jpg"
+    }
+]

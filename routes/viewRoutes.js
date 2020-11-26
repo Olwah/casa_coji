@@ -11,5 +11,7 @@ router.get('/accommodation', viewsController.getAccommodation);
 router.get('/restaurant', viewsController.getRestaurant);
 router.get('/climbing', viewsController.getClimbing);
 router.get('/equipment', viewsController.getEquipment);
+router.get('/activities', viewsController.getCoursesActivities);
+router.get('/combos', viewsController.getCombos);
 
 module.exports = router;
