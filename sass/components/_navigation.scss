@@ -132,15 +132,7 @@
                 display: flex;
                 align-items: center;
                 font-size: 1.5rem;
-
-                // NOT DISPLAYING...
-                &::before {
-                    content: '';
-                    display: block;
-                    background-image: url("../img/svg/speech-bubble.svg");
-                    width: 2rem;
-                    height: 2rem;
-                }
+                margin-bottom: .5rem;
             }
         }
     }

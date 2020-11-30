@@ -1,6 +1,7 @@
 import Splide from '@splidejs/splide';
 import { toggleNav } from './navigation';
 import { expandRoom } from './rooms';
+import { expandActivities } from './coursesActivities';
 
 // NAVIGATION CONTROLLER
 const navBtn = document.querySelector('.nav__btn');
@@ -59,12 +60,42 @@ document.addEventListener('DOMContentLoaded', function () {
     categorySlider.sync(categoryNavSlider).mount();
 });
 
-// ROOM CONTROLLER
+// STAY CONTROLLER
 const roomExpand = document.querySelector('.rooms__expand');
 const roomExpands = document.querySelectorAll('.rooms__expand');
+const roomGallery = document.querySelector('.rooms__gallery');
+const roomGalleries = document.getElementsByClassName('.rooms__gallery');
+
 
 if (roomExpand) {
     roomExpands.forEach((el) => {
         el.addEventListener('click', expandRoom);
+    });
+}
+
+/*
+if (roomGallery) {
+    roomGalleries.forEach(el => {
+        el.addEventListener('click', (e) => {
+            if (e.target.matches(''))
+        })
+    })
+}
+*/
+
+// COURSES & ACTIVITIES CONTROLLER
+const activitiesType = document.querySelector('.activities__type');
+const activitiesTypes = document.querySelectorAll('.activities__type');
+
+if (activitiesType) {
+    activitiesTypes.forEach((el) => {
+        el.addEventListener('click', (e) => {
+            if (e.target.matches('.activities__type, .activities__type *')) {
+                const activityTypeIcon = e.target.closest('.activities__type').lastElementChild.lastElementChild;
+                const activityItem = e.target.closest('.activities__type')
+                    .nextElementSibling;
+                expandActivities(activityTypeIcon, activityItem);
+            }
+        });
     });
 }
