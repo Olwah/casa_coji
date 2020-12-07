@@ -1,0 +1,61 @@
+doctype html
+html
+    head
+        block head
+            meta(charset='UTF-8')
+            meta(name='viewport' content='width=device-width, initial-scale=1.0')
+            link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css")
+            link(rel='stylesheet' type='text/css' href='/css/style.css')
+            link(rel='shortcut icon' type='image/png' href='/img/favicon.png')
+            link(href="https://fonts.googleapis.com/css2?family=Mrs+Sheppards&family=Thasadith:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet")
+            title Casa Coji | #{title}
+
+    body
+        //- NAVIGATION
+        include _navigation
+
+        //- CONTENT
+        .admin
+            .hero.divider__mountain--bottom
+                .hero__title Admin
+                .hero__img
+                    img(src='img/casa_coji_main.jpeg')
+            .hero__about.divider__mountain
+                h2.hero__about-title Admin Page
+                h3.hero__about-info Click on the tabs below to select a page to update. When you complete the form for each page the data will be uploaded to the database and will automatically be pulled into the website the next time you reload. Alternatively, you can edit information using the MongoDB Compass application. Note: To upload new photos you must use the forms on this page.
+            main.admin__main
+                .admin__tabs
+                    button#updateStay.admin__tablink.is-active Stay
+                    button#updateRestaurant.admin__tablink Restaurant
+                    button#updateClimbing.admin__tablink Climbing
+                    button#updateCourses.admin__tablink Courses & Activities
+                    button#updateEquipment.admin__tablink Equipment
+                    button#updateCombos.admin__tablink Combos
+                
+                form#stay__form.admin__form(action='/api/accommodation' method='post' enctype='multipart/form-data')
+                    label(for='name') Name
+                    input#stay-name(type='text' name='name')
+                    label(for='nombre') Nombre
+                    input#stay-nombre(type='text' name='nombre')
+                    label(for='price') Price
+                    input#stay-price(type='number' name='price')
+                    label(for='sleeps') Sleeps
+                    input#stay-sleeps(type='number' name='sleeps')
+                    label(for='summary') Summary
+                    input#stay-summary(type='text' name='summary')
+                    label(for='sumario') Sumario
+                    input#stay-sumario(type='text' name='sumario')
+                    label(for='description') Description
+                    input#stay-description(type='text' name='description')
+                    label(for='descripcion') Descripción
+                    input#stay-descripcion(type='text' name='descripción')
+                    label(for='stay-imageCover') Choose a new cover photo
+                    input#stay-imageCover.admin__upload(type='file', accept='image/*', name='stay-imageCover')
+                    label(for='stay-images') Choose new photos
+                    input#stay-images.admin__upload(type='file', accept='image/*', name='stay-images')
+                    //-button.btn.admin__btn Save new accomodation
+                    input.btn.admin__btn(type='submit' value='Save new accomodation')
+                
+        //- FOOTER
+        include _footer
+        script(src="/js/bundle.js")

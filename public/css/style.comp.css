@@ -100,31 +100,34 @@ html {
   font-size: 62.5%;
   background-color: blanchedalmond; }
 
-body {
+body,
+button {
   font-family: "Thasadith", sans-serif; }
 
-.hero__about {
-  background-color: #000;
-  color: blanchedalmond;
-  font-family: "Thasadith", sans-serif;
-  padding: 1rem; }
-  .hero__about-title {
-    font-size: 2rem;
-    font-weight: 600;
-    text-align: center;
-    margin-bottom: 0.5rem; }
-  .hero__about-info {
-    font-size: 1.2rem;
-    font-weight: 500;
-    font-style: italic; }
-
-.padding-top-small {
-  padding-top: 1rem; }
+body {
+  /*
+    @include respond(tab-port) {
+        display: grid;
+        grid-template-rows: repeat(20, 1fr);
+        grid-template-columns:
+            [full-start] minmax(5rem, 1fr) [center-start] repeat(
+                10,
+                [col-start] minmax(min-content, 14rem) [col-end]
+            )
+            [center-end] minmax(5rem, 1fr) [full-end];
+    }
+    */ }
 
 .hero {
   position: relative;
   width: 100%;
   height: min-content; }
+  .hero__img {
+    width: 100%;
+    max-height: 25rem; }
+    .hero__img img {
+      max-width: 100%;
+      max-height: 100%; }
   .hero__title {
     font-family: "Mrs Sheppards", cursive;
     font-size: 4.5rem;
@@ -136,11 +139,45 @@ body {
     transform: translate(-50%, -50%);
     animation: flicker-in 3s linear both;
     z-index: 10; }
-  .hero__img {
-    width: 100%; }
-    .hero__img img {
-      max-width: 100%;
-      max-height: 100%; }
+    @media only screen and (min-width: 48em) {
+      .hero__title {
+        font-size: 10rem; } }
+  .hero__about {
+    background-color: #000;
+    color: blanchedalmond;
+    font-family: "Thasadith", sans-serif;
+    padding: 1rem 1rem 2rem 1rem; }
+    .hero__about--courses {
+      padding: 1.5rem 1rem 2rem 1rem; }
+    .hero__about-title {
+      font-size: 2rem;
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 0.5rem; }
+      @media only screen and (min-width: 48em) {
+        .hero__about-title {
+          font-size: 10rem; } }
+    .hero__about-info {
+      font-size: 1.2rem;
+      font-weight: 500;
+      font-style: italic; }
+
+.buffer {
+  height: 2rem;
+  background-color: black; }
+  .buffer--top {
+    margin-top: 1rem; }
+  .buffer--bottom {
+    margin-bottom: 1rem; }
+
+.padding-top-small {
+  padding-top: 1rem; }
+
+.padding-bottom-tiny {
+  padding-bottom: 0.5rem; }
+
+.hide {
+  display: none; }
 
 a {
   color: inherit;
@@ -149,6 +186,9 @@ a {
 h4 {
   font-family: "Thasadith", sans-serif;
   font-size: 2rem; }
+  @media only screen and (min-width: 48em) {
+    h4 {
+      font-size: 2.5rem; } }
 
 .btn {
   font-family: "Thasadith", sans-serif;
@@ -161,6 +201,13 @@ h4 {
   color: blanchedalmond;
   border-radius: 2rem;
   border: 1px solid blanchedalmond; }
+  @media only screen and (min-width: 23.5em) {
+    .btn {
+      font-size: 1.2rem;
+      padding: .7rem 1.5rem; } }
+  @media only screen and (min-width: 64em) {
+    .btn {
+      font-size: 2rem; } }
   .btn:focus {
     outline: none; }
 
@@ -172,34 +219,45 @@ h4 {
   right: 1rem;
   z-index: 20;
   animation: slide-in-br 2s 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both; }
+  @media only screen and (min-width: 64em) {
+    .whatsapp {
+      width: 6rem;
+      height: 6rem;
+      right: 2rem; } }
   .whatsapp img {
     max-width: 100%;
     max-height: 100%;
     animation: heartbeat 1.5s 1.5s ease-in-out 5 both; }
 
 .divider__mountain {
-  clip-path: polygon(0 3.5%, 2% 3%, 7.5% 3.5%, 8% 3.7%, 8.5% 4%, 11.5% 3.1%, 12% 3%, 12.5% 3.1%, 15% 4%, 17.7% 2.1%, 18% 2%, 19.5% 2.5%, 23% 3%, 28% 3%, 29% 3.5%, 31% 4%, 32% 5%, 34.5% 3.2%, 35% 3%, 36% 3.3%, 39% 5%, 48% 0, 50% 1%, 52.5% 1%, 53% 1.1%, 58% 5%, 60% 4.7%, 63.5% 3%, 64% 3.1%, 64.5% 3%, 65% 3.2%, 66% 3.1%, 69% 4%, 70% 4.3%, 73% 5%, 75% 4.6%, 77% 4.3%, 77.6% 4.1%, 78% 4%, 79% 4.6%, 80% 5%, 80.5% 4.8%, 83% 3%, 85% 3.7%, 86% 3.5%, 87% 3.7%, 88% 3%, 93% 3.7%, 94% 2.7%, 95% 3%, 96% 2.9%, 100% 3.5%, 100% 100%, 98% 98%, 90% 100%, 88% 98%, 83% 100%, 80% 99%, 78% 100%, 75% 97%, 69% 99%, 62% 100%, 60% 100%, 53% 95%, 51% 95%, 49% 93%, 39% 100%, 35% 97%, 32% 96%, 28% 98%, 18% 98%, 15% 99%, 12% 98%, 8% 97%, 0 100%, 0 100%);
-  /*
-        &--small {
-            clip-path: polygon(0% 0%, 100% 0%, 100% 84%, 97% 67%, 93% 83%, 89% 65%, 82% 77%, 74% 73%, 67% 89%, 64% 93%, 61% 83%, 56% 72%, 52% 52%, 46% 68%, 42% 80%, 38% 69%, 32% 44%, 28% 50%, 24% 76%, 19% 66%, 13% 69%, 9% 44%, 6% 58%, 3% 65%, 0% 79%);
-        }
-        */ }
+  clip-path: polygon(0 3.5%, 2% 3%, 7.5% 3.5%, 8% 3.7%, 8.5% 4%, 11.5% 3.1%, 12% 3%, 12.5% 3.1%, 15% 4%, 17.7% 2.1%, 18% 2%, 19.5% 2.5%, 23% 3%, 28% 3%, 29% 3.5%, 31% 4%, 32% 5%, 34.5% 3.2%, 35% 3%, 36% 3.3%, 39% 5%, 48% 0, 50% 1%, 52.5% 1%, 53% 1.1%, 58% 5%, 60% 4.7%, 63.5% 3%, 64% 3.1%, 64.5% 3%, 65% 3.2%, 66% 3.1%, 69% 4%, 70% 4.3%, 73% 5%, 75% 4.6%, 77% 4.3%, 77.6% 4.1%, 78% 4%, 79% 4.6%, 80% 5%, 80.5% 4.8%, 83% 3%, 85% 3.7%, 86% 3.5%, 87% 3.7%, 88% 3%, 93% 3.7%, 94% 2.7%, 95% 3%, 96% 2.9%, 100% 3.5%, 100% 100%, 98% 98%, 90% 100%, 88% 98%, 83% 100%, 80% 99%, 78% 100%, 75% 97%, 69% 99%, 62% 100%, 60% 100%, 53% 95%, 51% 95%, 49% 93%, 39% 100%, 35% 97%, 32% 96%, 28% 98%, 18% 98%, 15% 99%, 12% 98%, 8% 97%, 0 100%, 0 100%); }
   .divider__mountain--top {
     clip-path: polygon(0 3.5%, 2% 3%, 7.5% 3.5%, 8% 3.7%, 8.5% 4%, 11.5% 3.1%, 12% 3%, 12.5% 3.1%, 15% 4%, 17.7% 2.1%, 18% 2%, 19.5% 2.5%, 23% 3%, 28% 3%, 29% 3.5%, 31% 4%, 32% 5%, 34.5% 3.2%, 35% 3%, 36% 3.3%, 39% 5%, 48% 0, 50% 1%, 52.5% 1%, 53% 1.1%, 58% 5%, 60% 4.7%, 63.5% 3%, 64% 3.1%, 64.5% 3%, 65% 3.2%, 66% 3.1%, 69% 4%, 70% 4.3%, 73% 5%, 75% 4.6%, 77% 4.3%, 77.6% 4.1%, 78% 4%, 79% 4.6%, 80% 5%, 80.5% 4.8%, 83% 3%, 85% 3.7%, 86% 3.5%, 87% 3.7%, 88% 3%, 93% 3.7%, 94% 2.7%, 95% 3%, 96% 2.9%, 100% 3.5%, 100% 100%, 0% 100%); }
+    .divider__mountain--top-small {
+      clip-path: polygon(0 8.5%, 2% 23%, 7.5% 5.5%, 8% 4.7%, 8.5% 7%, 11.5% 19.1%, 12% 17%, 12.5% 14.1%, 15% 1%, 17.7% 18.1%, 18% 16%, 19.5% 13.5%, 23% 0%, 28% 17%, 29% 12.5%, 31% 3.5%, 32% 0%, 34.5% 9.2%, 35% 14%, 36% 18.3%, 39% 12%, 48% 0, 50% 13%, 52.5% 21%, 53% 22.1%, 58% 24%, 60% 30.7%, 63.5% 20%, 64% 21.1%, 64.5% 19%, 65% 15.2%, 66% 7.1%, 69% 3%, 70% 7.3%, 73% 18%, 75% 2.6%, 77% 9.3%, 77.6% 12.1%, 78% 12%, 79% 14.6%, 80% 18%, 80.5% 16.8%, 83% 2%, 85% 6.7%, 86% 2.5%, 87% 3.7%, 88% 0%, 93% 16.7%, 94% 7.7%, 95% 6%, 96% 1%, 100% 9.5%, 100% 100%, 0% 100%); }
   .divider__mountain--bottom {
     clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 98% 98%, 90% 100%, 88% 98%, 83% 100%, 80% 99%, 78% 100%, 75% 97%, 69% 99%, 62% 100%, 60% 100%, 53% 95%, 51% 95%, 49% 93%, 39% 100%, 35% 97%, 32% 96%, 28% 98%, 18% 98%, 15% 99%, 12% 98%, 8% 97%, 0 100%, 0 100%); }
+    .divider__mountain--bottom-small {
+      clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 98% 93%, 90% 76%, 88% 98%, 83% 69%, 80% 72%, 78% 60%, 75% 95%, 69% 88%, 62% 64%, 60% 93%, 53% 57%, 51% 72%, 49% 81%, 39% 51%, 35% 76%, 32% 100%, 28% 98%, 18% 67%, 15% 54%, 12% 98%, 8% 76%, 0 96%, 0 100%); }
 
 .footer {
   background-color: #000;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem .5rem;
+  padding: 1rem 6rem 1rem .5rem;
   margin-top: -1rem; }
+  @media only screen and (min-width: 64em) {
+    .footer {
+      padding-right: 10rem; } }
   .footer__logo {
     width: 4rem;
     height: 4rem;
     padding-left: .5rem; }
+    @media only screen and (min-width: 48em) {
+      .footer__logo {
+        width: 6rem;
+        height: 6rem; } }
     .footer__logo img {
       max-width: 100%;
       max-height: 100%; }
@@ -212,6 +270,12 @@ h4 {
     flex-direction: column;
     justify-content: center;
     color: blanchedalmond; }
+    @media only screen and (min-width: 48em) {
+      .footer__contact {
+        font-size: 1.5rem; } }
+    @media only screen and (min-width: 90em) {
+      .footer__contact {
+        font-size: 2rem; } }
 
 #nav-closed {
   width: auto;
@@ -224,6 +288,13 @@ h4 {
   top: 1rem;
   right: 1.5rem;
   z-index: 10; }
+  @media only screen and (min-width: 64em) {
+    #nav-closed {
+      top: 2rem;
+      right: 2.5rem; } }
+  @media only screen and (min-width: 90em) {
+    #nav-closed {
+      top: 3rem; } }
 
 #nav-open {
   opacity: 0;
@@ -246,6 +317,10 @@ h4 {
   left: 1rem;
   font-family: "Mrs Sheppards", cursive;
   font-size: 2.5rem; }
+  @media only screen and (min-width: 48em) {
+    .nav__logo {
+      left: 2rem;
+      font-size: 5.5rem; } }
 
 .nav__menu {
   display: flex;
@@ -257,18 +332,49 @@ h4 {
     font-size: 1.4rem;
     font-weight: bold;
     margin-right: 1rem;
-    color: #000; }
+    color: blanchedalmond; }
+    .nav__menu-lang span {
+      color: #000; }
+    @media only screen and (min-width: 48em) {
+      .nav__menu-lang {
+        font-size: 2rem; } }
+    @media only screen and (min-width: 90em) {
+      .nav__menu-lang {
+        font-size: 3rem; } }
 
 .nav__icon {
   width: 2.5rem;
   height: 2.5rem;
   margin-top: -.5rem; }
+  @media only screen and (min-width: 48em) {
+    .nav__icon {
+      width: 3.5rem;
+      height: 3.5rem; } }
+  @media only screen and (min-width: 90em) {
+    .nav__icon {
+      width: 4.5rem;
+      height: 4.5rem; } }
   .nav__icon--large {
     width: 100%;
     background-color: blanchedalmond; }
+    @media only screen and (min-width: 48em) {
+      .nav__icon--large {
+        padding-left: 15rem; } }
     .nav__icon--large img {
       max-width: 100%;
       max-height: 100%; }
+      @media only screen and (min-width: 48em) {
+        .nav__icon--large img {
+          max-width: 50%;
+          max-height: 50%; } }
+      @media only screen and (min-width: 64em) {
+        .nav__icon--large img {
+          max-width: 40%;
+          max-height: 40%; } }
+      @media only screen and (min-width: 90em) {
+        .nav__icon--large img {
+          max-width: 30%;
+          max-height: 30%; } }
   .nav__icon--open {
     fill: blanchedalmond; }
 
@@ -282,6 +388,14 @@ h4 {
   border-radius: 50%;
   background-color: blanchedalmond;
   transition: transform .3s .7s linear; }
+  @media only screen and (min-width: 48em) {
+    .nav__btn {
+      width: 4.5rem;
+      height: 4.5rem; } }
+  @media only screen and (min-width: 90em) {
+    .nav__btn {
+      width: 6.5rem;
+      height: 6.5rem; } }
   .nav__btn.is-open {
     background-color: #000;
     transform: rotate(180deg); }
@@ -303,6 +417,19 @@ h4 {
   align-items: flex-start;
   padding: 0.5rem 5rem 4rem 6rem;
   margin-top: -.5rem; }
+  @media only screen and (min-width: 48em) {
+    .nav__list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      justify-items: flex-start;
+      padding: 1.5rem 5rem 4rem 15rem; } }
+  @media only screen and (min-width: 64em) {
+    .nav__list {
+      grid-template-columns: 1fr 1fr 1fr;
+      padding-left: 5rem; } }
+  @media only screen and (min-width: 90em) {
+    .nav__list {
+      padding-top: 2.5rem; } }
   .nav__list-item {
     display: flex;
     align-items: center;
@@ -319,13 +446,8 @@ h4 {
     .nav__list-item--whatsapp, .nav__list-item--email {
       display: flex;
       align-items: center;
-      font-size: 1.5rem; }
-      .nav__list-item--whatsapp::before, .nav__list-item--email::before {
-        content: '';
-        display: block;
-        background-image: url("../img/svg/speech-bubble.svg");
-        width: 2rem;
-        height: 2rem; }
+      font-size: 1.5rem;
+      margin-bottom: .5rem; }
 
 .nav__menu-icon {
   width: 2rem;
@@ -334,6 +456,9 @@ h4 {
   margin-right: 1rem; }
   .nav__menu-icon--contact {
     align-self: flex-start; }
+    @media only screen and (min-width: 64em) {
+      .nav__menu-icon--contact {
+        margin-top: .5rem; } }
 
 .price {
   position: relative;
@@ -358,78 +483,152 @@ h4 {
     fill: blanchedalmond;
     z-index: 10; }
 
-.activities {
-  background-color: #000; }
-  .activities__mountain {
-    background-image: url("../img/svg/mountain-outline.svg");
-    width: 100%;
-    height: 8rem;
-    background-repeat: no-repeat;
-    background-position-x: right;
-    margin: -2.5rem 0; }
-  .activities__main {
-    padding: 1rem 0.5rem; }
-  .activities__items {
-    background-color: blanchedalmond;
-    padding-bottom: 1rem;
-    margin-bottom: 2rem; }
-  .activities__type {
-    font-family: "Mrs Sheppards", cursive;
-    font-size: 5rem;
-    text-align: center;
-    letter-spacing: .1em; }
-  .activities__item {
-    display: flex;
-    flex-direction: column;
-    padding: 1rem;
-    border: 5px solid blanchedalmond;
+.admin__main {
+  padding: 1rem; }
+
+.admin__tabs {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 1rem; }
+
+.admin__tablink {
+  background-color: blanchedalmond;
+  border: none;
+  outline: none;
+  width: 100%;
+  height: 5rem;
+  font-size: 1.6rem;
+  font-weight: bold; }
+  .admin__tablink.is-active {
     background-color: #000;
-    color: blanchedalmond;
-    outline: 1px solid #000;
-    margin: 0 .5rem 1rem .5rem; }
-  .activities__img {
-    position: relative;
-    width: 100%;
-    margin-bottom: .5rem; }
-    .activities__img img {
-      max-width: 100%;
-      max-height: 100%; }
-  .activities__title {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-family: "Mrs Sheppards", cursive;
-    font-size: 2rem;
-    letter-spacing: 0.1em;
-    width: 100%;
-    text-align: center; }
-  .activities__details {
-    font-size: 2rem;
-    text-align: center; }
-  .activities__card {
+    color: blanchedalmond; }
+
+.admin form {
+  background-color: #000;
+  padding: 2rem; }
+
+.admin label {
+  font-size: 1.5rem;
+  color: blanchedalmond;
+  margin-bottom: .5rem; }
+
+.admin input {
+  width: 50%;
+  margin-bottom: 1rem; }
+  .admin input:focus {
+    outline: 1px solid blanchedalmond; }
+  .admin input[type='submit']:focus {
+    outline: none; }
+
+.admin__btn {
+  width: 50%;
+  cursor: pointer; }
+
+#stay__form {
+  display: flex;
+  flex-direction: column; }
+
+.activities__mountain {
+  background-image: url("../img/svg/mountain-outline.svg");
+  width: 100%;
+  height: 8rem;
+  background-repeat: no-repeat;
+  background-position-x: right;
+  margin: -2.5rem 0; }
+
+.activities__main {
+  background-color: blanchedalmond;
+  padding: 1rem 0.5rem; }
+
+.activities__items {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  background-color: blanchedalmond;
+  padding-top: .5rem;
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+  transition: opacity .2s linear, max-height .5s ease-out; }
+  .activities__items.is-active {
+    opacity: 1; }
+
+.activities__type {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #000;
+  color: blanchedalmond;
+  font-family: "Mrs Sheppards", cursive;
+  font-size: 5rem;
+  text-align: center;
+  letter-spacing: .1em;
+  padding: 1rem 1.5rem;
+  margin: 1rem .5rem; }
+  .activities__type-icon {
+    fill: #000;
+    width: 3rem;
+    height: 3rem;
+    background-color: blanchedalmond;
+    border-radius: 50%;
+    padding: .2rem; }
+
+.activities__item {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  border: 5px solid blanchedalmond;
+  background-color: #000;
+  color: blanchedalmond;
+  outline: 1px solid #000;
+  margin: 0 .5rem 1rem .5rem; }
+
+.activities__img {
+  position: relative;
+  width: 100%;
+  margin-bottom: .5rem; }
+  .activities__img img {
+    max-width: 100%;
+    max-height: 100%; }
+
+.activities__title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: "Mrs Sheppards", cursive;
+  font-size: 2rem;
+  letter-spacing: 0.1em;
+  width: 100%;
+  text-align: center; }
+
+.activities__details {
+  font-size: 2rem;
+  text-align: center; }
+
+.activities__card {
+  display: flex;
+  flex-direction: column; }
+  .activities__card-item {
     display: flex;
-    flex-direction: column; }
-    .activities__card-item {
-      display: flex;
-      align-items: center;
-      margin: .5rem 0; }
-    .activities__card-icon {
-      width: 3rem;
-      height: 3rem;
-      fill: blanchedalmond;
-      align-self: flex-start;
-      margin-right: 2rem; }
-    .activities__card-text {
-      width: 80%; }
-    .activities__card-summary {
-      font-size: 2rem;
-      font-weight: 800; }
-    .activities__card-description {
-      font-size: 1.3rem; }
-    .activities__card-value {
-      font-family: "Mrs Sheppards", cursive;
-      font-size: 2rem; }
+    align-items: center;
+    margin: .5rem 0; }
+  .activities__card-icon {
+    width: 3rem;
+    height: 3rem;
+    fill: blanchedalmond;
+    align-self: flex-start;
+    margin-right: 2rem; }
+  .activities__card-text {
+    width: 80%; }
+  .activities__card-summary {
+    font-size: 2rem;
+    font-weight: 800; }
+  .activities__card-description {
+    font-size: 1.3rem; }
+  .activities__card-value {
+    font-family: "Mrs Sheppards", cursive;
+    font-size: 2rem; }
 
 .climbing {
   background-color: #000; }
@@ -491,50 +690,120 @@ h4 {
     text-align: center; }
 
 .equipment {
-  background-color: #000; }
+  background-color: blanchedalmond; }
   .equipment__main {
     background-color: blanchedalmond;
-    padding: 2rem .5rem;
-    margin-top: 1rem; }
+    padding: 0 .5rem 1rem .5rem; }
   .equipment__items {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr));
-    gap: 1rem .5rem; }
+    grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+    gap: 1rem .5rem;
+    background-color: #000;
+    padding: 1rem .5rem; }
   .equipment__item {
-    position: relative; }
+    color: blanchedalmond;
+    height: 15rem;
+    position: relative;
+    border: 1px solid blanchedalmond; }
     .equipment__item-info {
-      height: 70%;
+      height: 100%;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%); }
+      justify-content: space-evenly;
+      align-items: center; }
+    .equipment__item-icon {
+      width: 5rem;
+      height: 5rem;
+      fill: blanchedalmond; }
     .equipment__item-name {
-      font-family: "Mrs Sheppards", cursive;
-      font-size: 2.5rem;
-      letter-spacing: .1em;
-      -webkit-text-stroke: 1px springgreen; }
+      text-align: center;
+      font-size: 1.7rem;
+      letter-spacing: .1em; }
     .equipment__item-price {
-      width: 2.5rem;
-      height: 2.5rem;
+      width: 3.5rem;
+      height: 3.5rem;
       background-color: #000;
       border-radius: 50%;
       color: blanchedalmond;
       font-family: "Thasadith", sans-serif;
-      font-size: 1rem;
+      font-size: 1.5rem;
       font-style: italic;
       font-weight: bold;
       border: 1px blanchedalmond solid;
       display: flex;
       justify-content: center;
       align-items: center; }
+    .equipment__item-desc {
+      font-size: 1rem;
+      font-style: italic; }
     .equipment__item img {
       max-width: 100%;
       min-height: 100%;
       object-fit: cover; }
+  .equipment__combos {
+    background-color: #000;
+    color: blanchedalmond;
+    padding: 3rem .5rem;
+    margin: 2rem 0; }
+    .equipment__combos-heading {
+      font-family: "Mrs Sheppards", cursive;
+      font-size: 4rem;
+      text-align: center;
+      letter-spacing: .1em; }
+    .equipment__combos-info {
+      font-size: 1.3rem;
+      text-align: center;
+      padding-bottom: 1rem; }
+    .equipment__combos-wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      padding: .5rem;
+      border: 1px solid blanchedalmond;
+      border-radius: .4rem;
+      margin-bottom: 1rem; }
+    .equipment__combos__mountain {
+      background-image: url("../img/svg/mountain-outline.svg");
+      width: 100%;
+      height: 8rem;
+      background-repeat: no-repeat;
+      background-position-x: right;
+      margin: -2.5rem 0; }
+    .equipment__combos-title {
+      font-size: 1.3rem;
+      font-style: italic;
+      background-color: blanchedalmond;
+      width: fit-content;
+      color: #000;
+      padding: .5rem;
+      border-radius: .4rem; }
+    .equipment__combos-icons {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding-top: 1rem; }
+      .equipment__combos-icons--details {
+        align-items: baseline; }
+    .equipment__combos-double {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; }
+    .equipment__combos-icon {
+      width: 2rem;
+      height: 2rem;
+      fill: blanchedalmond; }
+    .equipment__combos-number {
+      font-size: 1rem;
+      font-style: italic; }
+      .equipment__combos-number--centre {
+        text-align: center; }
+    .equipment__combos-plus {
+      font-size: 1.5rem; }
+    .equipment__combos-price {
+      width: 3rem;
+      height: 3rem;
+      font-size: 1.2rem; }
 
 .food {
   background-color: #000; }
@@ -615,6 +884,7 @@ h4 {
 
 .home {
   background-color: #000;
+  padding: 0 1rem;
   /* Add this to media query for desktop view at a later date 
     display: grid;
     grid-template-columns:
@@ -638,10 +908,30 @@ h4 {
         grid-column: col-start 6 / full-end;
     }
     */ }
+  @media only screen and (min-width: 48em) {
+    .home {
+      display: grid;
+      grid-template-rows: [full-start] minmax(5rem, 100vh) [hero-end about-start] 10rem [about-end main-start] repeat(10, [row-start] minmax(min-content, 14rem) [row-end]) [main-end];
+      grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+      column-gap: 1rem; } }
+  @media only screen and (min-width: 64em) {
+    .home {
+      grid-template-rows: [full-start] minmax(5rem, 100vh) [hero-end about-start] 13rem [about-end main-start] repeat(10, [row-start] minmax(min-content, 14rem) [row-end]) [main-end]; } }
+  @media only screen and (min-width: 90em) {
+    .home {
+      grid-template-rows: [full-start] minmax(5rem, 100vh) [hero-end about-start] 16rem [about-end main-start] repeat(10, [row-start] minmax(min-content, 14rem) [row-end]) [main-end];
+      column-gap: 2rem; } }
   .home__overview {
     position: relative;
     width: 100%;
     height: min-content; }
+    @media only screen and (min-width: 48em) {
+      .home__overview {
+        grid-row: full-start / hero-end;
+        grid-column: 1 / -1;
+        width: calc(100% + 2rem);
+        height: inherit;
+        margin-left: -1rem; } }
     .home__overview-title {
       font-family: "Mrs Sheppards", cursive;
       font-size: 4.5rem;
@@ -655,22 +945,63 @@ h4 {
       z-index: 10; }
     .home__overview-pagination {
       bottom: 3.5em; }
+      @media only screen and (min-width: 26.5em) {
+        .home__overview-pagination {
+          bottom: 4.5em; } }
+      @media only screen and (min-width: 48em) {
+        .home__overview-pagination {
+          bottom: 35em; } }
+      @media only screen and (min-width: 64em) {
+        .home__overview-pagination {
+          bottom: 45em; } }
+      @media only screen and (min-width: 90em) {
+        .home__overview-pagination {
+          bottom: 72em; } }
     .home__overview-page {
       background-color: blanchedalmond; }
+      @media only screen and (min-width: 48em) {
+        .home__overview-page {
+          width: 1rem;
+          height: 1rem; } }
+      @media only screen and (min-width: 64em) {
+        .home__overview-page {
+          width: 1.5rem;
+          height: 1.5rem;
+          margin-right: 1rem; } }
+      @media only screen and (min-width: 90em) {
+        .home__overview-page {
+          width: 2rem;
+          height: 2rem; } }
       .home__overview-page.is-active {
         background-color: #000; }
   .home__about {
     font-family: "Thasadith", sans-serif;
     color: blanchedalmond;
     padding: 1.5rem 1rem 2rem 1rem; }
+    @media only screen and (min-width: 48em) {
+      .home__about {
+        grid-row: about-start / about-end;
+        grid-column: 1 / -1; } }
     .home__about-title {
       font-size: 2rem;
       font-weight: 700;
       text-align: center; }
+      @media only screen and (min-width: 64em) {
+        .home__about-title {
+          font-size: 3rem; } }
+      @media only screen and (min-width: 90em) {
+        .home__about-title {
+          font-size: 4rem; } }
     .home__about-info {
       font-size: 1.5rem;
       font-weight: 300;
       text-align: justify; }
+      @media only screen and (min-width: 64em) {
+        .home__about-info {
+          font-size: 2rem; } }
+      @media only screen and (min-width: 90em) {
+        .home__about-info {
+          font-size: 2.5rem; } }
   .home__section {
     width: 100%;
     height: 50vh;
@@ -678,12 +1009,24 @@ h4 {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center; }
+    @media only screen and (min-width: 48em) {
+      .home__section {
+        height: 100%; } }
     .home__section-title {
       font-family: "Mrs Sheppards", cursive;
       font-size: 5rem;
       font-weight: 600;
       color: #000;
       letter-spacing: .5rem; }
+      @media only screen and (min-width: 23.5em) {
+        .home__section-title {
+          font-size: 3.5rem; } }
+      @media only screen and (min-width: 48em) {
+        .home__section-title {
+          font-size: 5.5rem; } }
+      @media only screen and (min-width: 90em) {
+        .home__section-title {
+          font-size: 7rem; } }
     .home__section-details {
       font-family: "Thasadith", sans-serif;
       font-size: 1.5rem;
@@ -691,23 +1034,87 @@ h4 {
   .home__rooms {
     background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url("/img/camping_placeholder.jpg") no-repeat;
     background-size: cover; }
+    @media only screen and (min-width: 48em) {
+      .home__rooms {
+        grid-row: main-start / span 4;
+        grid-column: 1 / span 3; } }
+    @media only screen and (min-width: 90em) {
+      .home__rooms {
+        grid-column: 1 / span 5; } }
   .home__food {
     background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url("/img/food_placeholder.png") no-repeat;
     background-size: cover; }
+    @media only screen and (min-width: 48em) {
+      .home__food {
+        grid-row: main-start / span 3;
+        grid-column: 4 / -1; } }
+    @media only screen and (min-width: 90em) {
+      .home__food {
+        grid-column: 6 / -1; } }
   .home__activities {
     background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url("/img/activities_placeholder.jpg") no-repeat center;
     background-size: cover; }
+    @media only screen and (min-width: 48em) {
+      .home__activities {
+        grid-row: row-start 5 / span 3;
+        grid-column: 1 / span 3; } }
+    @media only screen and (min-width: 64em) {
+      .home__activities {
+        grid-row: row-start 4 / span 4;
+        grid-column: 4 / span 3; } }
+    @media only screen and (min-width: 90em) {
+      .home__activities {
+        grid-column: 6 / span 3; } }
   .home__climbing {
     background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url("/img/courses_placeholder.jpg") no-repeat;
     background-size: cover;
     background-position-x: -3rem; }
+    @media only screen and (min-width: 48em) {
+      .home__climbing {
+        grid-row: row-start 4 / span 3;
+        grid-column: 4 / -1;
+        background-position-x: -20rem; } }
+    @media only screen and (min-width: 64em) {
+      .home__climbing {
+        grid-row: row-start 4 / main-end;
+        grid-column: 7 / -1;
+        background-position-x: -80rem; } }
+    @media only screen and (min-width: 90em) {
+      .home__climbing {
+        grid-column: 9 / -1; } }
   .home__equipment {
     background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url("/img/equipment_placeholder.jpg") no-repeat;
     background-size: cover; }
+    @media only screen and (min-width: 48em) {
+      .home__equipment {
+        grid-row: row-start 8 / main-end;
+        grid-column: 1 / span 3; } }
+    @media only screen and (min-width: 64em) {
+      .home__equipment {
+        grid-row: row-start 5 / span 3;
+        grid-column: 1 / span 3; } }
+    @media only screen and (min-width: 90em) {
+      .home__equipment {
+        grid-column: 1 / span 5; } }
   .home__combos {
     background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url("/img/combo_placeholder.jpg") no-repeat;
     background-size: cover;
     background-position-y: -13rem; }
+    @media only screen and (min-width: 48em) {
+      .home__combos {
+        grid-row: row-start 7 / main-end;
+        grid-column: 4 / -1;
+        background-position-y: 0; } }
+    @media only screen and (min-width: 64em) {
+      .home__combos {
+        grid-row: row-start 8 / main-end;
+        grid-column: 1 / span 6;
+        background-position-y: -35rem;
+        margin-top: 1rem; } }
+    @media only screen and (min-width: 90em) {
+      .home__combos {
+        grid-column: 1 / span 8;
+        background-position-y: -60rem; } }
   .home__merge {
     height: 2rem; }
 

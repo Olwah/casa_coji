@@ -13,5 +13,6 @@ router.get('/climbing', viewsController.getClimbing);
 router.get('/equipment', viewsController.getEquipment);
 router.get('/activities', viewsController.getCoursesActivities);
 router.get('/combos', viewsController.getCombos);
+router.get('/admin', viewsController.getAdmin);
 
 module.exports = router;

@@ -19,3 +19,22 @@
     max-width: 100%;
     max-height: 100%;
 }
+
+// BREAKPOINTS
+@mixin respond($breakpoint) {
+    @if $breakpoint == mobile-med {
+        @media only screen and (min-width: 23.5em) { @content };    // 375px
+    }
+    @if $breakpoint == mobile-large {
+        @media only screen and (min-width: 26.5em) { @content };     // 425px
+    }
+    @if $breakpoint == tab-port {
+        @media only screen and (min-width: 48em) { @content };    // 768px
+    }
+    @if $breakpoint == tab-land {
+        @media only screen and (min-width: 64em) { @content };    // 1024px
+    }
+    @if $breakpoint == laptop {
+        @media only screen and (min-width: 90em) { @content };    // 1440px
+    }
+}

@@ -3,13 +3,22 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem .5rem;
+    padding: 1rem 6rem 1rem .5rem;
     margin-top: -1rem;
+
+    @include respond(tab-land) {
+        padding-right: 10rem;
+    }
 
     &__logo {
         width: 4rem;
         height: 4rem;
         padding-left: .5rem;
+
+        @include respond(tab-port) {
+            width: 6rem;
+            height: 6rem;
+        }
 
         & img {
             @include imgMax
@@ -27,5 +36,13 @@
         flex-direction: column;
         justify-content: center; 
         color: $color-white;  
+
+        @include respond(tab-port) {
+            font-size: 1.5rem;
+        }
+
+        @include respond(laptop) {
+            font-size: 2rem;
+        }
     }
 }

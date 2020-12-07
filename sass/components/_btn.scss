@@ -9,7 +9,15 @@
     color: $color-white;
     border-radius: 2rem;
     border: 1px solid $color-white;
-    //box-shadow: 2px 2px .2px $color-black;
+
+    @include respond(mobile-med) {
+        font-size: 1.2rem;
+        padding: .7rem 1.5rem;
+    }
+
+    @include respond(tab-land) {
+        font-size: 2rem;
+    }
 
     &:focus {
         outline: none;

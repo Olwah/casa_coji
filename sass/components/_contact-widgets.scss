@@ -7,6 +7,12 @@
     z-index: 20;
     animation: slide-in-br 2s 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 
+    @include respond(tab-land) {
+        width: 6rem;
+        height: 6rem;
+        right: 2rem;
+    }
+
     & img {
         @include imgMax;
         animation: heartbeat 1.5s 1.5s ease-in-out 5 both;

@@ -1,5 +1,58 @@
 extends base
 
+mixin equipmentCombo(title, icon1, icon2, icon3, price)
+    - let hide = 'hide';
+    - [icon1, icon2, icon3].forEach(el => el === '' ? hide = 'hide' : hide = '')
+    .equipment__combos-wrapper
+        .equipment__combos-title= title
+        .equipment__combos-icons
+            svg.equipment__combos-icon(class=hide)
+                use(xlink:href=`img/svg/sprite.svg#icon-${icon1}`)
+            .equipment__combos-plus(class=`${hide}`) +
+            svg.equipment__combos-icon(class=`${hide}`)
+                use(xlink:href=`img/svg/sprite.svg#icon-${icon2}`)
+            .equipment__combos-plus(class=`${hide}`) +
+            svg.equipment__combos-icon(class=`${hide}`)
+                use(xlink:href=`img/svg/sprite.svg#icon-${icon3}`)
+            .equipment__combos-plus =
+            .equipment__item-price.equipment__combos-price= `$${price}`
+
+mixin equipmentComboFull(title, icon1, icon2, icon3, icon4, icon5, icon6, details1, details2, details3, details4, details5, details6, price)
+    .equipment__combos-wrapper
+        .equipment__combos-title= title
+        .equipment__combos-icons.equipment__combos-icons--details
+            .equipment__combos-double
+                svg.equipment__combos-icon
+                    use(xlink:href=`img/svg/sprite.svg#icon-${icon1}`)
+                .equipment__combos-number= details1
+            .equipment__combos-plus +
+            .equipment__combos-double
+                svg.equipment__combos-icon
+                    use(xlink:href=`img/svg/sprite.svg#icon-${icon2}`)
+                .equipment__combos-number= details2
+            .equipment__combos-plus +
+            .equipment__combos-double
+                svg.equipment__combos-icon
+                    use(xlink:href=`img/svg/sprite.svg#icon-${icon3}`)
+                .equipment__combos-number= details3
+            .equipment__combos-plus +
+            .equipment__combos-double
+                svg.equipment__combos-icon
+                    use(xlink:href=`img/svg/sprite.svg#icon-${icon4}`)
+                .equipment__combos-number= details4
+            .equipment__combos-plus +
+            .equipment__combos-double
+                svg.equipment__combos-icon
+                    use(xlink:href=`img/svg/sprite.svg#icon-${icon5}`)
+                .equipment__combos-number= details5
+            .equipment__combos-plus +
+            .equipment__combos-double
+                svg.equipment__combos-icon
+                    use(xlink:href=`img/svg/sprite.svg#icon-${icon6}`)
+                .equipment__combos-number= details6
+            .equipment__combos-plus =
+            .equipment__item-price.equipment__combos-price= `$${price}`
+
 block content
     .equipment
         .hero.divider__mountain--bottom
@@ -9,11 +62,107 @@ block content
         .hero__about.divider__mountain
             h2.hero__about-title Rent Equipment
             h3.hero__about-info Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate amet nobis esse modi. Nihil sint praesentium ipsum consequatur id, similique consequuntur minima! Mollitia, aut? Velit ab aspernatur suscipit quidem qui?
-        main.equipment__main.divider__mountain
+        main.equipment__main
+            .buffer.buffer--top.divider__mountain--top-small
             .equipment__items
                 each item in equipment
                     .equipment__item
                         .equipment__item-info
+                            svg.equipment__item-icon
+                                use(xlink:href=`img/svg/sprite.svg#icon-${item.imageCover}`) 
                             .equipment__item-name= item.name
+                            .equipment__item-desc= item.description
                             .equipment__item-price= `$${item.price}`
-                        img(src=`/img/${item.imageCover}`)
+            .buffer.buffer--bottom.divider__mountain--bottom-small
+            .equipment__combos.divider__mountain
+                .equipment__combos-heading Combos
+                .equipment__combos-info See our combos below for discounts on multiple items! 
+                .equipment__combos-wrapper
+                    .equipment__combos-title Personal Equipment
+                    .equipment__combos-icons
+                        svg.equipment__combos-icon
+                            use(xlink:href=`img/svg/sprite.svg#icon-climbing-shoes`)
+                        .equipment__combos-plus +
+                        svg.equipment__combos-icon
+                            use(xlink:href=`img/svg/sprite.svg#icon-harness`)
+                        .equipment__combos-plus +
+                        svg.equipment__combos-icon
+                            use(xlink:href=`img/svg/sprite.svg#icon-helmet`)
+                        .equipment__combos-plus =
+                        .equipment__item-price.equipment__combos-price $8
+                .equipment__combos-wrapper
+                    .equipment__combos-title Sport Climbing Pack
+                    .equipment__combos-icons
+                        svg.equipment__combos-icon
+                            use(xlink:href=`img/svg/sprite.svg#icon-rope-new`)
+                        .equipment__combos-plus +
+                        svg.equipment__combos-icon
+                            use(xlink:href=`img/svg/sprite.svg#icon-quick-draw`)
+                        .equipment__combos-plus +
+                        svg.equipment__combos-icon
+                            use(xlink:href=`img/svg/sprite.svg#icon-grigri`)
+                        .equipment__combos-plus =
+                        .equipment__item-price.equipment__combos-price $20
+                .equipment__combos-wrapper
+                    .equipment__combos-title Personal Equipment + Sport Climbing Pack (2 people)
+                    .equipment__combos-icons.equipment__combos-icons--details
+                        .equipment__combos-double
+                            svg.equipment__combos-icon
+                                use(xlink:href=`img/svg/sprite.svg#icon-climbing-shoes`)
+                            .equipment__combos-number x2
+                        .equipment__combos-plus +
+                        .equipment__combos-double
+                            svg.equipment__combos-icon
+                                use(xlink:href=`img/svg/sprite.svg#icon-harness`)
+                            .equipment__combos-number x2
+                        .equipment__combos-plus +
+                        .equipment__combos-double
+                            svg.equipment__combos-icon
+                                use(xlink:href=`img/svg/sprite.svg#icon-helmet`)
+                            .equipment__combos-number x2
+                        .equipment__combos-plus +
+                        .equipment__combos-double
+                            svg.equipment__combos-icon
+                                use(xlink:href=`img/svg/sprite.svg#icon-rope-new`)
+                            .equipment__combos-number
+                        .equipment__combos-plus +
+                        .equipment__combos-double
+                            svg.equipment__combos-icon
+                                use(xlink:href=`img/svg/sprite.svg#icon-quick-draw`)
+                            .equipment__combos-number x14
+                        .equipment__combos-plus +
+                        .equipment__combos-double
+                            svg.equipment__combos-icon
+                                use(xlink:href=`img/svg/sprite.svg#icon-grigri`)
+                            .equipment__combos-number
+                        .equipment__combos-plus =
+                        .equipment__item-price.equipment__combos-price $30
+                .equipment__combos-wrapper
+                    .equipment__combos-title Multi-Pitch Pack
+                    .equipment__combos-icons.equipment__combos-icons--details
+                        .equipment__combos-double
+                            svg.equipment__combos-icon
+                                use(xlink:href=`img/svg/sprite.svg#icon-rope-new`)
+                            .equipment__combos-number
+                        .equipment__combos-plus +
+                        .equipment__combos-double
+                            svg.equipment__combos-icon
+                                use(xlink:href=`img/svg/sprite.svg#icon-quick-draw`)
+                            .equipment__combos-number x14
+                        .equipment__combos-plus +
+                        .equipment__combos-double
+                            svg.equipment__combos-icon
+                                use(xlink:href=`img/svg/sprite.svg#icon-anchor`)
+                            .equipment__combos-number x2
+                        .equipment__combos-plus +
+                        .equipment__combos-double
+                            svg.equipment__combos-icon
+                                use(xlink:href=`img/svg/sprite.svg#icon-atc`)
+                            .equipment__combos-number.equipment__combos-number--centre x2<br>(inc carabiner)
+                        .equipment__combos-plus +
+                        .equipment__combos-double
+                            svg.equipment__combos-icon
+                                use(xlink:href=`img/svg/sprite.svg#icon-daisy`)
+                            .equipment__combos-number.equipment__combos-number--centre x2<br>(inc carabiner)
+                        .equipment__combos-plus =
+                        .equipment__item-price.equipment__combos-price $35

@@ -12,7 +12,7 @@ block content
         .rooms__overview
             each room in rooms
                 .rooms__item.divider__mountain
-                    img(src=`img/${room.imageCover}`)
+                    img.rooms__item-hero(src=`img/${room.imageCover}`)
                     .rooms__item-info
                         h3.rooms__item-title= `${room.name}`
                         h4.rooms__item-price= `$${room.price} / night`
@@ -28,5 +28,5 @@ block content
                             - let z = 0;
                             each image in room.images
                                 .rooms__gallery-item(class=`rooms__gallery-item--${z++}`)
-                                    img(src=`img/${image}`)
+                                    img.rooms__gallery-item-img(src=`img/${image}`)
                         .rooms__buffer

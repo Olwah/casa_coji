@@ -19,7 +19,7 @@ const cors = require('cors');
 const AppError = require('./utils/appError');
 const globalErrorHandler = require('./controllers/errorController');
 const viewRouter = require('./routes/viewRoutes');
-
+const apiRouter = require('./routes/apiRoutes');
 
 const app = express();
 
@@ -128,6 +128,7 @@ app.use(express.static(`${__dirname}/public`));
 
 /**** ROUTES *****/
 app.use('/', viewRouter);
+app.use('/api', apiRouter);
 
 // If we can reach this stage then the req/res cycle was not completed as middleware added to the stack in the order it's defined in our code. This catches all bad queries.
 // .all() includes every http method or verb (get, patch, update, delete) & '*' denotes everything or all routes

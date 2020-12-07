@@ -10,7 +10,7 @@ html
             link(href="https://fonts.googleapis.com/css2?family=Mrs+Sheppards&family=Thasadith:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet")
             title Casa Coji | #{title}
 
-    body
+    body(data-alert=`${alert ? alert : ''}`)
         //- NAVIGATION
         include _navigation
 

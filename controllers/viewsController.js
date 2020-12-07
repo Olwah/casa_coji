@@ -57,3 +57,9 @@ exports.getCombos = catchAsync(async (req, res, next) => {
         title: 'Combos'
     });
 });
+
+exports.getAdmin = catchAsync(async (req, res, next) => {
+    res.status(200).render('admin', {
+        title: 'Admin'
+    });
+});

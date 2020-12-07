@@ -9,6 +9,15 @@
     top: 1rem;
     right: 1.5rem;
     z-index: 10;
+
+    @include respond(tab-land) {
+        top: 2rem;
+        right: 2.5rem;
+    }
+
+    @include respond(laptop) {
+        top: 3rem;
+    }
 }
 
 #nav-open {
@@ -36,6 +45,11 @@
         left: 1rem;
         font-family: $font-headings;
         font-size: 2.5rem;
+
+        @include respond(tab-port) {
+            left: 2rem;
+            font-size: 5.5rem;
+        }
     }
 
     &__menu {
@@ -49,7 +63,19 @@
             font-size: 1.4rem;
             font-weight: bold;
             margin-right: 1rem;
-            color: $color-black;
+            color: $color-white;
+
+            & span {
+                color: $color-black;
+            }
+
+            @include respond(tab-port) {
+                font-size: 2rem;
+            }
+
+            @include respond(laptop) {
+                font-size: 3rem;
+            }
         }
     }
     
@@ -58,12 +84,41 @@
         height: 2.5rem; 
         margin-top: -.5rem;
 
+        @include respond(tab-port) {
+            width: 3.5rem;
+            height: 3.5rem;
+        }
+
+        @include respond(laptop) {
+            width: 4.5rem;
+            height: 4.5rem;
+        }
+
         &--large {
             width: 100%;
             background-color: $color-white;
 
+            @include respond(tab-port) {
+                padding-left: 15rem;
+            }
+
             & img {
                 @include imgMax;
+
+                @include respond(tab-port) {
+                    max-width: 50%;
+                    max-height: 50%;
+                }
+
+                @include respond(tab-land) {
+                    max-width: 40%;
+                    max-height: 40%;
+                }
+
+                @include respond(laptop) {
+                    max-width: 30%;
+                    max-height: 30%;
+                }
             }
         }
 
@@ -82,6 +137,16 @@
         border-radius: 50%;
         background-color: $color-white;
         transition: transform .3s .7s linear;
+
+        @include respond(tab-port) {
+            width: 4.5rem;
+            height: 4.5rem;
+        }
+
+        @include respond(laptop) {
+            width: 6.5rem;
+            height: 6.5rem;
+        }
 
         &.is-open {
             background-color: $color-black;
@@ -108,6 +173,22 @@
         align-items: flex-start;
         padding: 0.5rem 5rem 4rem 6rem;
         margin-top: -.5rem;
+
+        @include respond(tab-port) {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            justify-items: flex-start;
+            padding: 1.5rem 5rem 4rem 15rem;
+        }
+
+        @include respond(tab-land) {
+            grid-template-columns: 1fr 1fr 1fr;
+            padding-left: 5rem;
+        }
+
+        @include respond(laptop) {
+            padding-top: 2.5rem;
+        }
 
         &-item {
             display: flex;
@@ -145,6 +226,10 @@
 
         &--contact {
             align-self: flex-start;
+
+            @include respond(tab-land) {
+                margin-top: .5rem;
+            }
         }
     }
 }

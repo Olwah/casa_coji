@@ -1,10 +1,35 @@
 .home {
     background-color: $color-black;
+    padding: 0 1rem;
+
+    @include respond(tab-port) {
+        display: grid;
+        grid-template-rows: [full-start] minmax(5rem, 100vh) [hero-end about-start] 10rem [about-end main-start] repeat(10, [row-start] minmax(min-content, 14rem) [row-end]) [main-end];
+        grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+        column-gap: 1rem;
+    }
+
+    @include respond(tab-land) {
+        grid-template-rows: [full-start] minmax(5rem, 100vh) [hero-end about-start] 13rem [about-end main-start] repeat(10, [row-start] minmax(min-content, 14rem) [row-end]) [main-end];
+    }
+
+    @include respond(laptop) {
+        grid-template-rows: [full-start] minmax(5rem, 100vh) [hero-end about-start] 16rem [about-end main-start] repeat(10, [row-start] minmax(min-content, 14rem) [row-end]) [main-end];
+        column-gap: 2rem;
+    }
 
     &__overview {
         position: relative;
         width: 100%;
         height: min-content;
+
+        @include respond(tab-port) {
+            grid-row: full-start / hero-end;
+            grid-column: 1 / -1;
+            width: calc(100% + 2rem);
+            height: inherit;
+            margin-left: -1rem;
+        }
 
         &-title {
             font-family: $font-headings;
@@ -18,10 +43,42 @@
 
         &-pagination {
             bottom: 3.5em;
+
+            @include respond(mobile-large) {
+                bottom: 4.5em;
+            }
+
+            @include respond(tab-port) {
+                bottom: 35em;
+            } 
+
+            @include respond(tab-land) {
+                bottom: 45em;
+            } 
+
+            @include respond(laptop) {
+                bottom: 72em;
+            } 
         }
 
         &-page {
             background-color: $color-white;
+
+            @include respond(tab-port) {
+                width: 1rem;
+                height: 1rem;
+            } 
+
+            @include respond(tab-land) {
+                width: 1.5rem;
+                height: 1.5rem;
+                margin-right: 1rem;
+            } 
+
+            @include respond(laptop) {
+                width: 2rem;
+                height: 2rem;
+            } 
 
             &.is-active {
                 background-color: $color-black;
@@ -34,16 +91,37 @@
         color: $color-white;
         padding: 1.5rem 1rem 2rem 1rem;
 
+        @include respond(tab-port) {
+            grid-row: about-start / about-end;
+            grid-column: 1 / -1;
+        }
+
         &-title {
             font-size: 2rem;
             font-weight: 700;
             text-align: center;
+
+            @include respond(tab-land) {
+                font-size: 3rem;
+            }
+
+            @include respond(laptop) {
+                font-size: 4rem;
+            }   
         }
 
         &-info {
             font-size: 1.5rem;
             font-weight: 300;
             text-align: justify;
+
+            @include respond(tab-land) {
+                font-size: 2rem;
+            }
+
+            @include respond(laptop) {
+                font-size: 2.5rem;
+            }
         }
     }
 
@@ -55,12 +133,28 @@
         justify-content: space-evenly;
         align-items: center;
 
+        @include respond(tab-port) {
+            height: 100%;
+        }
+
         &-title {
             font-family: $font-headings;
             font-size: 5rem;
             font-weight: 600;
             color: $color-black;
             letter-spacing: .5rem;
+
+            @include respond(mobile-med) {
+                font-size: 3.5rem;
+            }
+
+            @include respond(tab-port) {
+                font-size: 5.5rem;
+            }
+
+            @include respond(laptop) {
+                font-size: 7rem;
+            }
         }
 
         &-details {
@@ -73,37 +167,117 @@
     &__rooms {
         background: linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.3)), url('/img/camping_placeholder.jpg') no-repeat;
         background-size: cover;
+
+        @include respond(tab-port) {
+            grid-row: main-start / span 4;
+            grid-column: 1 / span 3;
+        }
+
+        @include respond(laptop) {
+            grid-column: 1 / span 5;
+        }
     }
 
     &__food {
         background: linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.3)), url('/img/food_placeholder.png') no-repeat;
         background-size: cover;
+
+        @include respond(tab-port) {
+            grid-row: main-start / span 3;
+            grid-column: 4 / -1
+        }
+
+        @include respond(laptop) {
+            grid-column: 6 / -1;
+        }
     }
 
     &__activities {
         background: linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.3)), url('/img/activities_placeholder.jpg') no-repeat center;
         background-size: cover;
+
+        @include respond(tab-port) {
+            grid-row: row-start 5 / span 3;
+            grid-column: 1 / span 3;
+        }
+
+        @include respond(tab-land) {
+            grid-row: row-start 4 / span 4;
+            grid-column: 4 / span 3;
+        }
+
+        @include respond(laptop) {
+            grid-column: 6 / span 3;
+        }
     }
 
     &__climbing {
         background: linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.3)), url('/img/courses_placeholder.jpg') no-repeat;
         background-size: cover;
         background-position-x: -3rem;
+
+        @include respond(tab-port) {
+            grid-row: row-start 4 / span 3;
+            grid-column: 4 / -1;
+            background-position-x: -20rem;
+        }
+
+        @include respond(tab-land) {
+            grid-row: row-start 4 / main-end;
+            grid-column: 7 / -1;
+            background-position-x: -80rem;
+        }
+
+        @include respond(laptop) {
+            grid-column: 9 / -1;
+        }
     }
 
     &__equipment {
         background: linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.3)), url('/img/equipment_placeholder.jpg') no-repeat;
         background-size: cover;
+
+        @include respond(tab-port) {
+            grid-row: row-start 8 / main-end;
+            grid-column: 1 / span 3;
+        }
+
+        @include respond(tab-land) {
+            grid-row: row-start 5 / span 3;
+            grid-column: 1 / span 3;
+        }
+
+        @include respond(laptop) {
+            grid-column: 1 / span 5;
+        }
     }
 
     &__combos {
         background: linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.3)), url('/img/combo_placeholder.jpg') no-repeat;
         background-size: cover;
         background-position-y: -13rem;
+
+        @include respond(tab-port) {
+            grid-row: row-start 7 / main-end;
+            grid-column: 4 / -1;
+            background-position-y: 0;
+        }
+
+        @include respond(tab-land) {
+            grid-row: row-start 8 / main-end;
+            grid-column: 1 / span 6;
+            background-position-y: -35rem;
+            margin-top: 1rem;
+        }
+
+        @include respond(laptop) {
+            grid-column: 1 / span 8;
+            background-position-y: -60rem;
+        }
     }
 
     &__merge {
-        height: 2rem;
+        height: 2rem; 
     }
 
     /* Add this to media query for desktop view at a later date 

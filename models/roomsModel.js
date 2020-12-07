@@ -2,30 +2,25 @@ const mongoose = require('mongoose');
 const validator = require('validator');
 
 const roomsSchema = new mongoose.Schema({
-    roomId: {
-        type: Number,
-        unique: true,
-        required: [true, 'Please enter a roomID']
-    },
     name: {
         type: String,
         trim: true,
         unique: true,
-        required: [true, 'Please enter a name.']
+        //required: [true, 'Please enter a name.']
     },
     nombre: {
         type: String,
         trim: true,
         unique: true,
-        required: [true, 'Debes escribir un nombre']
+        //required: [true, 'Debes escribir un nombre']
     },
     price: {
         type: Number,
-        required: [true, 'Please enter a price.']
+        //required: [true, 'Please enter a price.']
     },
     sleeps: {
         type: Number,
-        required: [true, 'Please enter the number of beds available.']
+        //required: [true, 'Please enter the number of beds available.']
     },
     imageCover: {
         type: String,
@@ -34,11 +29,13 @@ const roomsSchema = new mongoose.Schema({
     images: [String], // Specifies an array of strings
     summary: {
         type: String,
-        trim: true
+        trim: true,
+        //required: [true, 'Please enter a summary for the room.']
     },
     sumario: {
         type: String,
-        trim: true
+        trim: true,
+        //required: [true, 'Debes escribir un sumario por la habitacion.']
     },
     description: {
         type: String,
